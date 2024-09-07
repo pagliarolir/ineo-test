@@ -1,0 +1,13 @@
+@import "./../variables";
+@import "./../colors";
+@import "./../mixins/border-solid";
+
+.p-tooltip .p-tooltip-text {
+  background-color: $secondary;
+  color: $primary;
+  font-size: $font-size-xsmaller;
+}
+
+.p-tooltip-arrow {
+  border-color: transparent transparent $secondary transparent;
+}

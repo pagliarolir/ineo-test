@@ -1,0 +1,7 @@
+/* Add an ellipsis to a label */
+@mixin ellipsis($max-width) {
+  max-width: $max-width;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

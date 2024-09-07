@@ -1,0 +1,60 @@
+@import "variables";
+@import "colors";
+
+
+span, label {
+  &.uppercase {
+    text-transform: uppercase;
+  }
+
+  &.bold {
+    font-weight: $font-weight-bold;
+  }
+
+  &.bolder {
+    font-weight: $font-weight-bolder;
+  }
+
+  &.error-label {
+    font-size: $font-size-small;
+    font-style: italic;
+    color: $alert;
+    align-self: flex-end;
+  }
+
+  &.black {
+    color: $black;
+  }
+
+  &.primary {
+    color: $primary;
+  }
+
+  &.secondary {
+    color: $secondary;
+  }
+
+  &.primary-dark {
+    color: $primary-dark;
+  }
+
+  &.big {
+    font-size: $font-size-big;
+  }
+
+  &.bigger {
+    font-size: $font-size-bigger;
+  }
+
+  &.small {
+    font-size: $font-size-small;
+  }
+
+  &.smaller {
+    font-size: $font-size-smaller;
+  }
+
+  &.center {
+    text-align: center
+  }
+}

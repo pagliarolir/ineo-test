@@ -1,0 +1,76 @@
+/* BASE VARIABLES */
+
+/* Body */
+$body-background: radial-gradient(circle at 10% 20%, rgb(255, 200, 124) 0%, rgb(252, 251, 121) 90%);
+
+
+/* Fonts */
+$font-weight-light: 200;
+$font-weight-regular: 400;
+$font-weight-semibold: 500;
+$font-weight-bold: 600;
+$font-weight-bolder: 700;
+$font-weight-max-bold: 900;
+
+$font-size-smaller: 0.7rem;
+$font-size-xsmaller: 0.785rem;
+$font-size-small: 0.875rem;
+$font-size-default: 1rem;
+$font-size-big: 1.25rem;
+$font-size-bigger: 1.5rem;
+
+/* Font spacing */
+$font-small-spacing: 0.05rem;
+$font-regular-spacing: 0.1rem;
+$font-big-spacing: 0.2rem;
+
+/* Z index */
+$z-index-very-high: 1001;
+$z-index-high: 3;
+
+/* Border */
+$border-radius-round: 50%;
+$border-radius-small: 25%;
+
+/* COMPONENT VARIABLES */
+
+/* Form Field */
+$form-field-height-small: 2rem;
+$form-field-height-default: 2.5rem;
+$form-field-height-big: 3rem;
+
+/* Card */
+$card-header-height: 4rem;
+$card-footer-height: 5rem;
+
+/* Navbar */
+$navbar-height: 3.5rem;
+$title-line-height: 1.4rem;
+
+/* Sidebar */
+$sidebar-width: 3rem;
+
+/* Box Shadow */
+$card-box-shadow: -3px 6px 12px #c7c7c7, 6px -3px 12px #ffffff;
+$block-box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.25), -2px -2px 3px 0 rgba(255, 255, 255, 0.3);
+$login-box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+
+/* Icons */
+$icon-size-default: 1rem;
+$icon-size-big: 1.25rem;
+$icon-size-bigger: 1.5rem;
+$icon-size-small: 0.875rem;
+
+$icon-button-size-bigger: 3rem;
+$icon-button-size-small: 1.5rem;
+
+$icon-border: -0.75px 0 #000, 0 0.75px #000, 0.75px 0 #000, 0 -0.75px #000;
+
+/* Badge */
+$badge-size-big: 2rem;
+
+/* Checkbox */
+$default-checkbox-size: 20px; //default Prime NG checkbox size
+
+/* Textarea */
+$textarea-min-height: 6.5rem;

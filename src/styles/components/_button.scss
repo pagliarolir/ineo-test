@@ -1,0 +1,114 @@
+@import 'colors';
+@import 'variables';
+@import 'mixins/set-color';
+
+.p-button:not(.p-button-icon-only):not(.p-splitbutton-defaultbutton) {
+  padding: 0.5rem;
+  border-radius: $border-radius-round;
+  display: flex;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: $font-weight-bold;
+  height: 100%;
+  min-width: 10rem;
+  width: 100%;
+}
+
+/* Common Button */
+p-button {
+  /* Colors */
+  &.primary {
+    .p-button {
+      @include set-color();
+    }
+  }
+
+  &.secondary {
+    .p-button {
+      @include set-color($secondary, $primary, $secondary);
+    }
+  }
+
+  &.primary-dark {
+    .p-button {
+      @include set-color($primary-dark, $white, $primary-dark);
+    }
+  }
+
+  &.cancel {
+    .p-button {
+      @include set-color($white, $primary, $primary);
+    }
+  }
+
+  &.success {
+    .p-button {
+      @include set-color($success, $white, $success);
+    }
+  }
+
+  /* Button Icons */
+  &.icon-bold {
+    .p-button {
+      .pi {
+        font-weight: $font-weight-max-bold;
+      }
+    }
+  }
+
+  &.icon-big {
+    .p-button {
+      .pi {
+        font-weight: $font-size-big;
+      }
+    }
+  }
+
+  &.icon-bigger {
+    .p-button {
+      width: $icon-size-bigger;
+      height: $icon-size-bigger;
+
+      .pi {
+        font-size: $icon-size-bigger
+      }
+    }
+  }
+
+  &.icon-small {
+    .p-button {
+      width: $icon-button-size-small;
+      height: $icon-button-size-small;
+
+      .pi {
+        font-size: $icon-size-small
+      }
+    }
+  }
+
+  /* Button Label */
+  &.uppercase {
+    .p-button-label {
+      text-transform: uppercase;
+    }
+  }
+
+  &.label-big {
+    .p-button-label {
+      font-size: $font-size-big
+    }
+  }
+
+  &.label-bigger {
+    .p-button-label {
+      font-size: $font-size-bigger
+    }
+  }
+
+  /* Effects */
+  &.shadow {
+    .p-button {
+      box-shadow: $block-box-shadow
+    }
+  }
+}

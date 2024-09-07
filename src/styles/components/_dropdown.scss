@@ -1,0 +1,60 @@
+@import "colors.scss";
+@import "variables.scss";
+@import "mixins/border-solid";
+
+p-dropdown {
+  width: 100%;
+  height: $form-field-height-default;
+
+  &.small {
+    height: $form-field-height-small;
+  }
+
+
+  .p-dropdown:not(.p-disabled).p-focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: none;
+  }
+
+  .p-dropdown {
+    height: 100%;
+    width: 100%;
+    @include border-solid($primary-dark);
+    border-radius: $border-radius-round;
+
+    .p-inputtext {
+      padding: 0.25rem 0.5rem;
+      border: none;
+    }
+
+    .p-dropdown-label {
+      display: flex;
+      align-items: center;
+      color: $primary-dark;
+      font-weight: $font-weight-bolder;
+      font-size: $font-size-default;
+    }
+
+    .p-icon {
+      color: $primary-dark
+    }
+  }
+
+  &.bigger-label {
+    .p-dropdown-label {
+      font-weight: $font-weight-bolder;
+      font-size: $font-size-bigger
+    }
+
+    .p-icon {
+      font-size: $font-size-big;
+      transform: scale(1.25);
+    }
+
+    span, .p-dropdown-empty-message {
+      font-weight: $font-weight-bold;
+      font-size: $font-size-big;
+    }
+  }
+}

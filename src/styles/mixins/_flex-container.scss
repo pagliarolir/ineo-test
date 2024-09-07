@@ -1,0 +1,7 @@
+/* Define a flex container with the chosen core */
+@mixin flex-container($justify-content: flex-start, $align-items: flex-start, $direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}

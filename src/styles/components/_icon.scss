@@ -1,0 +1,48 @@
+@import "colors";
+@import "variables";
+@import "mixins/flex-container";
+@import "mixins/border-solid";
+
+i {
+  &.border {
+      text-shadow: $icon-border
+  }
+  &.pi {
+  border-radius: 100%;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+
+  &.primary {
+    background: $primary;
+    color: $white;
+
+    .p-badge {
+      background: $white;
+      color: $primary;
+      @include border-solid($primary);
+    }
+  }
+
+  /* Sizes */
+
+  &.big {
+    font-size: 1.5rem;
+  }
+
+  /* Used in buttons */
+/*  &.bigger {
+    font-size: 2rem;
+    height: $icon-button-size-bigger;
+    aspect-ratio: 1/1;
+
+    .p-badge {
+      min-width: $badge-size-big;
+      min-height: $badge-size-big;
+      font-size: $font-size-big;
+      @include flex-container(center, center);
+    }
+  }*/
+}
+}
+

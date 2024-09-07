@@ -1,0 +1,18 @@
+@import "./../colors";
+
+.p-radiobutton .p-radiobutton-box:not(.p-disabled).p-focus {
+  border-color: $primary;
+  background: $primary;
+  color: $primary;
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: none;
+}
+
+.p-radiobutton .p-radiobutton-box {
+  border-color: $primary;
+}
+
+.p-radiobutton .p-radiobutton-box.p-highlight {
+  background: $primary;
+}

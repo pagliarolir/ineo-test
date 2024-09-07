@@ -1,0 +1,56 @@
+@import "variables";
+@import "colors";
+@import "mixins/border-solid";
+
+.p-inputtext:enabled:focus, .p-inputtext:hover {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: none;
+}
+
+.p-icon-field {
+  height: 2rem;
+  display: flex;
+
+}
+
+input.p-inputtext, textarea.p-inputtext {
+  width: 100%;
+  @include border-solid($primary);
+  border-radius: $border-radius-round;
+  height: $form-field-height-default;
+  padding: 0.5rem;
+  font-size: $font-size-small;
+  font-weight: $font-weight-bold;
+  color: $black;
+
+  &.big {
+    height: $form-field-height-big
+  }
+
+  + .error-code {
+    margin-left: auto;
+    color: $alert;
+    font-style: italic;
+  }
+}
+
+//Style label
+.span:has(+ input), .label:has(+ input) {
+  font-size: $font-size-small;
+  color: $primary;
+}
+
+/* Hide arrows in input type number */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

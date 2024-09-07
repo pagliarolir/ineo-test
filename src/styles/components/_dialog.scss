@@ -1,0 +1,32 @@
+@import 'variables.scss';
+@import 'colors.scss';
+@import 'mixins/flex-container';
+
+p-dialog {
+  .p-dialog {
+    border-radius: $border-radius-round;
+
+    .p-dialog-header {
+      font-size: $font-size-big;
+      border-top-right-radius: $border-radius-round;
+      border-top-left-radius: $border-radius-round;
+      background: $secondary;
+      padding: 1rem;
+      justify-content: flex-start;
+      gap: 0.5rem;
+    }
+
+    .p-dialog-content {
+      padding: 1rem;
+      color: $black;
+    }
+
+    .p-dialog-footer {
+      @include flex-container(flex-end);
+      border-bottom-right-radius: $border-radius-round;
+      border-bottom-left-radius: $border-radius-round;
+      padding: 1rem;
+      gap: 1rem;
+    }
+  }
+}

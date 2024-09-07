@@ -1,0 +1,77 @@
+@import "variables";
+@import "colors";
+@import "mixins/border-solid";
+
+.p-multiselect:not(.p-disabled).p-focus, .p-multiselect:not(.p-disabled):hover {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: none;
+}
+
+p-multiSelect {
+  //Hide checkbox for custom templates, e.g. phase types filters
+  &.hide-checkbox {
+    .p-multiselect-item {
+      > .p-checkbox {
+        display: none
+      }
+    }
+  }
+
+  .p-multiselect {
+    border-radius: $border-radius-round;
+    height: 100%;
+    @include border-solid($primary);
+
+    .p-multiselect-trigger {
+      width: 2rem;
+
+      .p-multiselect-trigger-icon {
+        font-size: $font-size-default !important;
+
+        .p-input-icon {
+          position: relative;
+
+          .p-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            font-size: $font-size-small;
+            line-height: $font-size-default;
+            height: $font-size-big;
+            min-width: $font-size-big;
+            background: $primary;
+            color: $white;
+          }
+        }
+      }
+    }
+
+    .p-multiselect-label-container {
+      display: none;
+    }
+
+    .p-multiselect-panel {
+      border-radius: $border-radius-round;
+      @include border-solid($primary);
+      overflow: hidden;
+
+      .p-multiselect-items {
+        padding: 0;
+
+        .p-multiselect-item:not(.p-disabled):hover {
+          background-color: $secondary-light;
+        }
+      }
+    }
+
+    .p-multiselect-item, .p-multiselect-header {
+      background: $secondary-light;
+
+      .p-checkbox-box.p-highlight {
+        border-color: $primary;
+        background: $primary
+      }
+    }
+  }
+}

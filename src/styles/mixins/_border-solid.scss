@@ -1,0 +1,4 @@
+/* Add a solid border of defined width and color */
+@mixin border-solid($color, $width: 2px) {
+  border: $width solid $color;
+}

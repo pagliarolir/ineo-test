@@ -1,0 +1,9 @@
+@import "./../colors";
+
+/* Define color and bg color of a p-element */
+@mixin set-color($background-color: $primary, $color: $white, $border: $primary) {
+  background-color: $background-color;
+  color: $color;
+  border-color: $border;
+  border-width: 2px;
+}

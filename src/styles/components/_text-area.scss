@@ -1,0 +1,21 @@
+@import "variables";
+@import "colors";
+@import "mixins/border-solid";
+
+textarea.p-inputtext {
+  width: 100%;
+  @include border-solid($primary);
+  border-radius: $border-radius-round;
+  min-height: $textarea-min-height;
+  padding: 0.5rem;
+  font-size: $font-size-small;
+  font-weight: $font-weight-bold;
+  color: $black;
+  background: $secondary-light;
+
+  + .error-code {
+    margin-left: auto;
+    color: $alert;
+    font-style: italic;
+  }
+}

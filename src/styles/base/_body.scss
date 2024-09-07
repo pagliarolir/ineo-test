@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import "colors";
+@import "variables";
+
+body,
+html {
+  height: 100%;
+  background: $body-background;
+}
+
+body,
+.p-component {
+  margin: 0;
+  font-family: 'primeicons', 'Poppins', serif;
+}
+
+/* Scrollbars override */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+} /* Track */
+::-webkit-scrollbar-track {
+  display: none;
+} /* Handle */
+::-webkit-scrollbar-thumb {
+  background: $primary-light;
+  border-radius: 5px;
+}
+/* Active scrollbar but invisible - chrome; */
+body::-webkit-scrollbar {
+  width: 0 !important;
+}
