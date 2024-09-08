@@ -21,7 +21,7 @@ p-dropdown {
     height: 100%;
     width: 100%;
     @include border-solid($primary-dark);
-    border-radius: $border-radius-round;
+    border-radius: $border-radius-default;
 
     .p-inputtext {
       padding: 0.25rem 0.5rem;

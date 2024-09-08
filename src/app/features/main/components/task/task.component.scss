@@ -1,0 +1,21 @@
+@import 'variables';
+@import 'colors';
+@import 'mixins/border-solid';
+@import 'mixins/flex-container';
+
+:host ::ng-deep {
+  padding: 0.5rem;
+  width: 100%;
+  display: flex;
+  cursor: pointer;
+  @include flex-container(flex-start, center);
+  @include border-solid($secondary-light);
+  min-height: 10%;
+  gap: 0.5rem;
+  border-radius: $border-radius-default;
+  box-shadow: $block-box-shadow;
+
+  .p-tag {
+    font-size: $font-size-small;
+  }
+}

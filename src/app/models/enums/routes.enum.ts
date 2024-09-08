@@ -1,3 +1,3 @@
 export enum ApplicationRoutes {
-HOME = ''
+  HOME = 'home'
 }

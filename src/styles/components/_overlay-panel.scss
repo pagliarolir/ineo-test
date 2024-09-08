@@ -9,7 +9,7 @@
   }
 
   .p-dropdown-panel, .p-autocomplete-panel {
-    border-radius: $border-radius-round;
+    border-radius: $border-radius-default;
     @include border-solid($primary);
 
     .p-dropdown-item, .p-dropdown-header, .p-dropdown-empty-message,

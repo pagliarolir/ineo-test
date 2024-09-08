@@ -5,36 +5,31 @@
 p-card {
   .p-card {
     height: 100%;
-    border-radius: $border-radius-round;
+    border-radius: $border-radius-default;
     background: $white;
-
-    //Box Shadow
     box-shadow: $card-box-shadow;
 
     .p-card-header {
       height: $card-header-height;
-      background-color: $secondary;
-      border-top-right-radius: 1rem;
-      border-top-left-radius: 1rem;
+      background-color: $bg2;
+      border-top-right-radius: $border-radius-default;
+      border-top-left-radius: $border-radius-default;
       @include flex-container(flex-start, center);
       padding: 1rem;
 
       .card-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flex-container(space-between, center);
         width: 100%;
         gap: 0.5rem;
 
         .card-form {
-          height: 2rem;
-          display: flex;
+          height: $form-field-height-small;
+          @include flex-container(flex-end);
           flex: 1;
-          justify-content: flex-end;
           gap: 0.5rem;
 
           > * {
-            height: 2rem;
+            height: $form-field-height-small;
 
             input.p-inputtext {
               height: $form-field-height-small;
@@ -57,6 +52,7 @@ p-card {
       height: calc(100% - $card-header-height);
       @include flex-container(flex-start, stretch, column);
       padding: 0;
+      //background: $bg2;
 
       .p-card-content {
         height: 100%;
@@ -68,11 +64,10 @@ p-card {
 
       .p-card-footer {
         height: $card-footer-height;
-        background-color: $secondary;
-        border-bottom-right-radius: 1rem;
-        border-bottom-left-radius: 1rem;
+        background-color: $bg2;
+        border-bottom-right-radius: $border-radius-default;
+        border-bottom-left-radius: $border-radius-default;
         @include flex-container(flex-start, center);
-        padding: 0.75%;
       }
     }
   }
@@ -80,63 +75,6 @@ p-card {
   &.no-shadow {
     .p-card {
       box-shadow: none;
-    }
-  }
-
-  .p-card-body-dashboard {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    width: 100%;
-    padding: 0;
-    background: $secondary;
-    border-radius: 0 0 $border-radius-round $border-radius-round;
-
-    span {
-      text-align: center;
-    }
-  }
-}
-
-.card-dash-platform {
-  .p-card {
-    position: relative;
-    box-shadow: none;
-
-    .left-content {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-  }
-
-  p-paginator {
-    .p-paginator {
-      background: $secondary;
-      border-radius: 0 0 $border-radius-round $border-radius-round;
-    }
-
-    span {
-      font-size: 0.75rem;
-      height: 1rem;
-    }
-
-    button {
-      min-width: 1rem;
-      height: 1rem;
-      font-size: 0.75rem;
-      margin: 0 0.1rem;
-
-      &.p-highlight {
-        background: $bg1;
-      }
-    }
-
-    .p-paginator-icon {
-      width: 0.8rem;
-      height: 0.8rem;
-
     }
   }
 }

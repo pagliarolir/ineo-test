@@ -19,7 +19,7 @@ p-multiSelect {
   }
 
   .p-multiselect {
-    border-radius: $border-radius-round;
+    border-radius: $border-radius-default;
     height: 100%;
     @include border-solid($primary);
 
@@ -52,7 +52,7 @@ p-multiSelect {
     }
 
     .p-multiselect-panel {
-      border-radius: $border-radius-round;
+      border-radius: $border-radius-default;
       @include border-solid($primary);
       overflow: hidden;
 

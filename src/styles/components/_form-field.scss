@@ -17,7 +17,7 @@
 input.p-inputtext, textarea.p-inputtext {
   width: 100%;
   @include border-solid($primary);
-  border-radius: $border-radius-round;
+  border-radius: $border-radius-default;
   height: $form-field-height-default;
   padding: 0.5rem;
   font-size: $font-size-small;

@@ -4,12 +4,12 @@
 
 p-dialog {
   .p-dialog {
-    border-radius: $border-radius-round;
+    border-radius: $border-radius-default;
 
     .p-dialog-header {
       font-size: $font-size-big;
-      border-top-right-radius: $border-radius-round;
-      border-top-left-radius: $border-radius-round;
+      border-top-right-radius: $border-radius-default;
+      border-top-left-radius: $border-radius-default;
       background: $secondary;
       padding: 1rem;
       justify-content: flex-start;
@@ -23,8 +23,8 @@ p-dialog {
 
     .p-dialog-footer {
       @include flex-container(flex-end);
-      border-bottom-right-radius: $border-radius-round;
-      border-bottom-left-radius: $border-radius-round;
+      border-bottom-right-radius: $border-radius-default;
+      border-bottom-left-radius: $border-radius-default;
       padding: 1rem;
       gap: 1rem;
     }

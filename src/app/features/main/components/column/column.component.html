@@ -1,0 +1,46 @@
+<p-card>
+  <ng-template pTemplate="header">
+    <div class="card-header">
+      <span>{{ column().label }}</span>
+      <form class="card-form" [formGroup]="formGroup()">
+        <p-iconField iconPosition="right">
+          <p-inputIcon styleClass="pi pi-search"/>
+          <input
+            [formControl]="search()"
+            type="text"
+            pInputText
+          />
+        </p-iconField>
+        <p-multiSelect
+          [filter]="false"
+          [formControl]="filters()"
+          [displaySelectedLabel]="false"
+          [options]="filterOptions()"
+          optionLabel="label">
+          <ng-template pTemplate="dropdownicon">
+            <p-inputIcon styleClass="pi pi-filter" pBadge [badgeDisabled]="!filters().value?.length"
+                         [value]="filters().value?.length ?? 0"/>
+          </ng-template>
+          <ng-template pTemplate="item" let-option>
+            {{ option }}
+          </ng-template>
+        </p-multiSelect>
+      </form>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="body">
+    <div class="tasks-list">
+      @for (task of tasks(); track task.id) {
+        <it-task
+          [highlight]="true"
+          [task]="task"
+        />
+      } @empty {
+        <it-no-data-box [label]="'No Data'" [padding]="0"></it-no-data-box>
+      }
+    </div>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    Add card
+  </ng-template>
+</p-card>
