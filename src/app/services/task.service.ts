@@ -17,18 +17,7 @@ export class TaskService {
     )
   }
 
-  /*  filterTasks(query: number): Observable<Task[]> {
-      /!* Set query params*!/
-      const options = Object.keys(params).reduce((acc, key) => {
-        const value = params[key as keyof ComponentReactiveResourceGetComponents$Params];
-        if (key === 'types' && Array.isArray(value) && value.length === 0) {
-          return acc; // If types in params obj exists but is an empty array, skip it
-        }
-        return !!value ? acc.set(key, value.toString()) : acc;
-      }, new HttpParams());
+  addTask(payload: Omit<Task, 'id'>) {
 
-      return this.http.get<Task[]>(this._url, {params: {column: columnId}}).pipe(
-        catchError(() => throwError(() => ({error: 'Errore nel caricamento dei task'})))
-      )
-    }*/
+  }
 }

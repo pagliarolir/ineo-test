@@ -2,13 +2,16 @@ import {Component, EventEmitter, input, Output} from '@angular/core';
 import {Task} from "../../../../models/interfaces/task";
 import {NgClass} from "@angular/common";
 import {HighlightDirective} from "../../../../directives/highlight.directive";
+import {Button} from "primeng/button";
+import {Icons} from "../../../../models/enums/icons.enum";
 
 @Component({
   selector: 'it-task',
   standalone: true,
   imports: [
     NgClass,
-    HighlightDirective
+    HighlightDirective,
+    Button
   ],
   templateUrl: './task.component.html',
   styleUrl: './task.component.scss'
@@ -16,6 +19,8 @@ import {HighlightDirective} from "../../../../directives/highlight.directive";
 export class TaskComponent {
 
   task = input.required<Task>()
+  Icons = Icons;
 
-  @Output() onSelectTask = new EventEmitter<void>()
+  @Output() selectTask = new EventEmitter<void>()
+  @Output() editTask = new EventEmitter<void>()
 }

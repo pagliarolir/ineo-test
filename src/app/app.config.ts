@@ -1,11 +1,14 @@
-import {importProvidersFrom, provideZoneChangeDetection} from '@angular/core';
+import {APP_INITIALIZER, provideZoneChangeDetection} from '@angular/core';
 import {provideRouter} from '@angular/router';
 
 import {routes} from './app.routes';
-import {HttpClient, provideHttpClient} from "@angular/common/http";
+import {provideHttpClient} from "@angular/common/http";
 import {provideAnimations} from "@angular/platform-browser/animations";
-import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
-import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import {PrimeNGConfig} from "primeng/api";
+
+export const initializeAppFactory = (primeConfig: PrimeNGConfig) => () => {
+  primeConfig.ripple = true;
+};
 
 export const appConfig = {
   providers: [
@@ -13,15 +16,10 @@ export const appConfig = {
     provideRouter(routes),
     provideHttpClient(),
     provideAnimations(),
-    importProvidersFrom(TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient],
-      },
-    }))]
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeAppFactory,
+      deps: [PrimeNGConfig],
+      multi: true,
+    },]
 };
-
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http)
-}

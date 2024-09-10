@@ -2,7 +2,7 @@
 @import 'variables';
 @import 'mixins/set-color';
 
-.p-button:not(.p-button-icon-only):not(.p-splitbutton-defaultbutton) {
+.p-button:not(.p-button-icon-only) {
   padding: 0.5rem;
   border-radius: $border-radius-default;
   display: flex;
@@ -12,44 +12,98 @@
   height: 100%;
   min-width: 10rem;
   width: 100%;
+
+  &.front-end {
+    @include set-color($white, $purple-300, $purple-300);
+  }
+
+  &.back-end {
+    @include set-color($white, $orange-300, $orange-300);
+  }
+
+  &.dev-ops {
+    @include set-color($white, $green-300, $green-300);
+  }
+
+  &.qa-test {
+    @include set-color($white, $red-300, $red-300);
+  }
+
+  &.sales {
+    @include set-color($white, $blue-300, $blue-300);
+  }
+
+  &.p-highlight {
+    &.front-end {
+      @include set-color($purple-300, $white, $purple-300);
+    }
+
+    &.back-end {
+      @include set-color($orange-300, $white, $orange-300);
+    }
+
+    &.dev-ops {
+      @include set-color($green-300, $white, $green-300);
+    }
+
+    &.qa-test {
+      @include set-color($red-300, $white, $red-300);
+    }
+
+    &.sales {
+      @include set-color($blue-300, $white, $blue-300);
+    }
+  }
+}
+
+.p-button-icon-only {
+  height: $icon-button-size;
+  width: $icon-button-size;
+  border-radius: $border-radius-default
 }
 
 /* Common Button */
 p-button {
   /* Colors */
   &.primary {
-    .p-button {
+    .p-button, .p-button-icon-only {
       @include set-color();
     }
   }
 
+  &.primary-light {
+    .p-button, .p-button-icon-only {
+      @include set-color($primary-light, $white, $primary-light);
+    }
+  }
+
   &.secondary {
-    .p-button {
+    .p-button, .p-button-icon-only {
       @include set-color($secondary, $primary, $secondary);
     }
   }
 
   &.primary-dark {
-    .p-button {
+    .p-button, .p-button-icon-only {
       @include set-color($primary-dark, $white, $primary-dark);
     }
   }
 
   &.cancel {
-    .p-button {
+    .p-button, .p-button-icon-only {
       @include set-color($white, $primary, $primary);
     }
   }
 
   &.success {
-    .p-button {
+    .p-button, .p-button-icon-only {
       @include set-color($success, $white, $success);
     }
   }
 
   /* Button Icons */
   &.icon-bold {
-    .p-button {
+    .p-button, .p-button-icon-only {
       .pi {
         font-weight: $font-weight-max-bold;
       }
@@ -57,7 +111,7 @@ p-button {
   }
 
   &.icon-big {
-    .p-button {
+    .p-button, .p-button-icon-only {
       .pi {
         font-weight: $font-size-big;
       }
@@ -65,7 +119,7 @@ p-button {
   }
 
   &.icon-bigger {
-    .p-button {
+    .p-button, .p-button-icon-only {
       width: $icon-size-bigger;
       height: $icon-size-bigger;
 
@@ -76,7 +130,7 @@ p-button {
   }
 
   &.icon-small {
-    .p-button {
+    .p-button, .p-button-icon-only {
       width: $icon-button-size-small;
       height: $icon-button-size-small;
 
@@ -107,8 +161,14 @@ p-button {
 
   /* Effects */
   &.shadow {
-    .p-button {
+    .p-button, .p-button-icon-only {
       box-shadow: $block-box-shadow
     }
   }
+
+}
+
+/* Set right border for multi select */
+.p-buttonset .p-button:not(:last-child) {
+  border-right: 2px solid currentColor;
 }

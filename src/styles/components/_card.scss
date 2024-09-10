@@ -68,6 +68,7 @@ p-card {
         border-bottom-right-radius: $border-radius-default;
         border-bottom-left-radius: $border-radius-default;
         @include flex-container(flex-start, center);
+        padding: 1rem;
       }
     }
   }

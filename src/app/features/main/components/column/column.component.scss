@@ -1,0 +1,26 @@
+@import "variables";
+
+:host {
+  flex: 0 1 25%;
+
+  .tasks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 100%;
+    padding: 1rem;
+    overflow: auto;
+  }
+
+  .add-task {
+    cursor: pointer;
+    border-radius: 1rem;
+    width: 35%;
+    height: 100%;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    //box-shadow: $block-box-shadow
+    box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.25), -4px -4px 14px rgba(255, 255, 255, 0.25);
+  }
+}

@@ -1,6 +1,9 @@
+import {Tag} from "./tag";
+
 export interface Task {
   id: number,
-  description: string,
+  label: string,
   column: number,
-  userId: number
+  userId: number,
+  tags: Tag[]
 }

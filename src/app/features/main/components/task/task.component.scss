@@ -10,7 +10,7 @@
   cursor: pointer;
   @include flex-container(flex-start, center);
   @include border-solid($secondary-light);
-  min-height: 10%;
+  min-height: 20%;
   gap: 0.5rem;
   border-radius: $border-radius-default;
   box-shadow: $block-box-shadow;

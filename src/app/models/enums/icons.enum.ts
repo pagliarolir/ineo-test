@@ -1,4 +1,4 @@
-/* Based on PrimeIcon class (import { PrimeIcons } from 'primeng/api')*/
+/* Prime NG's icons list */
 export enum Icons {
   ALIGN_CENTER = 'pi pi-align-center',
   ALIGN_JUSTIFY = 'pi pi-align-justify',

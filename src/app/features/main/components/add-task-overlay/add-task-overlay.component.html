@@ -1,0 +1,18 @@
+<div>
+  <span class="primary bold">Nome task</span>
+  <input pInputText>
+
+</div>
+<span class="primary bold">Tag</span>
+<p-selectButton
+  [options]="tags()"
+  [multiple]="true"
+  optionLabel="label"
+  optionValue="id">
+</p-selectButton>
+<span class="primary bold">Assegna a</span>
+<div class="avatars">
+  @for (user of users(); track user.id) {
+    <img class="avatar" [src]="user.picture"/>
+  }
+</div>

@@ -1,69 +1,11 @@
 @import "colors";
 @import "variables";
-@import "mixins/border-solid";
-
-.p-overlay {
-  /* Styling both dropdown and autocomplete panel */
-  .p-dropdown-panel {
-    overflow: hidden;
-  }
-
-  .p-dropdown-panel, .p-autocomplete-panel {
-    border-radius: $border-radius-default;
-    @include border-solid($primary);
-
-    .p-dropdown-item, .p-dropdown-header, .p-dropdown-empty-message,
-    .p-autocomplete-item, .p-autocomplete-header, .p-autocomplete-empty-message {
-      background-color: $secondary-light;
-    }
-
-    .p-dropdown-items, .p-autocomplete-items {
-      padding: 0;
-    }
-
-    span, .p-dropdown-empty-message {
-      color: $primary-dark;
-      font-weight: $font-weight-bold;
-      font-size: $font-size-default;
-    }
-  }
-}
 
 .p-overlaypanel {
-  &:has(.p-overlayActionPanel, .p-overlaypanel-content) {
-    background-color: $primary-light2;
-    border-radius: 5px;
-    border: 1px solid $primary-light3;
-    color: $primary;
-    font-size: $font-size-small;
+  background: navajowhite;
+  border-radius: $border-radius-default;
 
-    .p-overlaypanel-content {
-      padding: 0.5rem;
-    }
-
-    &::before, &::after {
-      display: none;
-    }
-  }
-
-}
-
-
-.bigger-label {
-  .p-overlay {
-    .p-dropdown-label, .p-autocomplete-label {
-      font-weight: $font-weight-bolder;
-      font-size: $font-size-bigger
-    }
-
-    .p-icon {
-      font-size: $font-size-big;
-      transform: scale(1.15);
-    }
-
-    span, .p-dropdown-empty-message, .p-autocomplete-empty-message {
-      font-weight: $font-weight-bold;
-      font-size: $font-size-big;
-    }
+  &::before, &::after {
+    display: none;
   }
 }

@@ -18,8 +18,7 @@
           [options]="filterOptions()"
           optionLabel="label">
           <ng-template pTemplate="dropdownicon">
-            <p-inputIcon styleClass="pi pi-filter" pBadge [badgeDisabled]="!filters().value?.length"
-                         [value]="filters().value?.length ?? 0"/>
+            <p-inputIcon styleClass="pi pi-filter"/>
           </ng-template>
           <ng-template pTemplate="item" let-option>
             {{ option }}
@@ -30,7 +29,7 @@
   </ng-template>
   <ng-template pTemplate="body">
     <div class="tasks-list">
-      @for (task of tasks(); track task.id) {
+      @for (task of filteredTasks(); track task.id) {
         <it-task
           [highlight]="true"
           [task]="task"
@@ -41,6 +40,14 @@
     </div>
   </ng-template>
   <ng-template pTemplate="footer">
-    Add card
+    <div class="add-task ripple primary"
+         pRipple
+         (click)="addTaskOp.toggle($event)">
+      <i [class]="Icons.PLUS"></i>
+      <span class="primary bold">Aggiungi task</span>
+    </div>
+    <p-overlayPanel #addTaskOp>
+      <it-add-task-overlay [tags]="Tags" [users]="Users"/>
+    </p-overlayPanel>
   </ng-template>
 </p-card>

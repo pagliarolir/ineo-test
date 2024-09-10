@@ -1,6 +1,13 @@
 @import "variables";
 @import "colors";
 
+.ripple {
+  &.primary {
+    .p-ink {
+      background: $primary;
+    }
+  }
+}
 
 span, label {
   &.uppercase {

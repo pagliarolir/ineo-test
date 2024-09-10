@@ -16,183 +16,183 @@
   "tasks": [
     {
       "id": 1,
-      "description": "Do something nice for someone you care about",
+      "label": "Do something nice for someone you care about",
       "column": 1,
-      "userId": 152
+      "userId": 1
     },
     {
       "id": 2,
-      "description": "Memorize a poem",
+      "label": "Memorize a poem",
       "column": 2,
-      "userId": 13
+      "userId": 1
     },
     {
       "id": 3,
-      "description": "Watch a classic movie",
+      "label": "Watch a classic movie",
       "column": 3,
-      "userId": 68
+      "userId": 1
     },
     {
       "id": 4,
-      "description": "Watch a documentary",
+      "label": "Watch a documentary",
       "column": 1,
-      "userId": 84
+      "userId": 1
     },
     {
       "id": 5,
-      "description": "Invest in cryptocurrency",
+      "label": "Invest in cryptocurrency",
       "column": 2,
-      "userId": 163
+      "userId": 1
     },
     {
       "id": 6,
-      "description": "Contribute code or a monetary donation to an open-source software project",
+      "label": "Contribute code or a monetary donation to an open-source software project",
       "column": 3,
-      "userId": 69
+      "userId": 1
     },
     {
       "id": 7,
-      "description": "Solve a Rubik's cube",
+      "label": "Solve a Rubik's cube",
       "column": 1,
-      "userId": 76
+      "userId": 1
     },
     {
       "id": 8,
-      "description": "Bake pastries for yourself and neighbor",
+      "label": "Bake pastries for yourself and neighbor",
       "column": 1,
-      "userId": 198
+      "userId": 1
     },
     {
       "id": 9,
-      "description": "Go see a Broadway production",
+      "label": "Go see a Broadway production",
       "column": 2,
-      "userId": 7
+      "userId": 1
     },
     {
       "id": 10,
-      "description": "Write a thank you letter to an influential person in your life",
+      "label": "Write a thank you letter to an influential person in your life",
       "column": 1,
-      "userId": 9
+      "userId": 1
     },
     {
       "id": 11,
-      "description": "Invite some friends over for a game night",
+      "label": "Invite some friends over for a game night",
       "column": 2,
-      "userId": 104
+      "userId": 1
     },
     {
       "id": 12,
-      "description": "Have a football scrimmage with some friends",
+      "label": "Have a football scrimmage with some friends",
       "column": 2,
-      "userId": 32
+      "userId": 1
     },
     {
       "id": 13,
-      "description": "Text a friend you haven't talked to in a long time",
+      "label": "Text a friend you haven't talked to in a long time",
+      "column": 1,
+      "userId": 1
+    },
+    {
+      "id": 14,
+      "label": "Organize pantry",
+      "column": 2,
+      "userId": 1
+    },
+    {
+      "id": 15,
+      "label": "Buy a new house decoration",
+      "column": 1,
+      "userId": 1
+    },
+    {
+      "id": 16,
+      "label": "Plan a vacation you've always wanted to take",
       "column": 1,
       "userId": 2
     },
     {
-      "id": 14,
-      "description": "Organize pantry",
-      "column": 2,
-      "userId": 46
-    },
-    {
-      "id": 15,
-      "description": "Buy a new house decoration",
-      "column": 1,
-      "userId": 105
-    },
-    {
-      "id": 16,
-      "description": "Plan a vacation you've always wanted to take",
-      "column": 1,
-      "userId": 162
-    },
-    {
       "id": 17,
-      "description": "Clean out car",
+      "label": "Clean out car",
       "column": 2,
-      "userId": 71
+      "userId": 2
     },
     {
       "id": 18,
-      "description": "Draw and color a Mandala",
+      "label": "Draw and color a Mandala",
       "column": 1,
-      "userId": 6
+      "userId": 2
     },
     {
       "id": 19,
-      "description": "Create a cookbook with favorite recipes",
+      "label": "Create a cookbook with favorite recipes",
       "column": 1,
-      "userId": 53
+      "userId": 2
     },
     {
       "id": 20,
-      "description": "Bake a pie with some friends",
+      "label": "Bake a pie with some friends",
       "column": 2,
-      "userId": 162
+      "userId": 2
     },
     {
       "id": 21,
-      "description": "Create a compost pile",
+      "label": "Create a compost pile",
       "column": 2,
-      "userId": 13
+      "userId": 2
     },
     {
       "id": 22,
-      "description": "Take a hike at a local park",
+      "label": "Take a hike at a local park",
       "column": 1,
-      "userId": 37
+      "userId": 2
     },
     {
       "id": 23,
-      "description": "Take a class at local community center that interests you",
+      "label": "Take a class at local community center that interests you",
       "column": 3,
-      "userId": 65
+      "userId": 2
     },
     {
       "id": 24,
-      "description": "Research a topic interested in",
+      "label": "Research a topic interested in",
       "column": 3,
-      "userId": 130
+      "userId": 2
     },
     {
       "id": 25,
-      "description": "Plan a trip to another country",
+      "label": "Plan a trip to another country",
       "column": 2,
-      "userId": 140
+      "userId": 2
     },
     {
       "id": 26,
-      "description": "Improve touch typing",
+      "label": "Improve touch typing",
       "column": 2,
-      "userId": 178
+      "userId": 3
     },
     {
       "id": 27,
-      "description": "Learn Express.js",
+      "label": "Learn Express.js",
       "column": 2,
-      "userId": 194
+      "userId": 3
     },
     {
       "id": 28,
-      "description": "Learn calligraphy",
+      "label": "Learn calligraphy",
       "column": 2,
-      "userId": 80
+      "userId": 3
     },
     {
       "id": 29,
-      "description": "Have a photo session with some friends",
+      "label": "Have a photo session with some friends",
       "column": 3,
-      "userId": 91
+      "userId": 3
     },
     {
       "id": 30,
-      "description": "Go to the gym",
+      "label": "Go to the gym",
       "column": 3,
-      "userId": 142
+      "userId": 3
     }
   ]
 }
