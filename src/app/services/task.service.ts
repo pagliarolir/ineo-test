@@ -18,6 +18,6 @@ export class TaskService {
   }
 
   addTask(payload: Omit<Task, 'id'>) {
-
+    return this.http.post(this._url, payload)
   }
 }

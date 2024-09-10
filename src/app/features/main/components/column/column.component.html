@@ -47,7 +47,11 @@
       <span class="primary bold">Aggiungi task</span>
     </div>
     <p-overlayPanel #addTaskOp>
-      <it-add-task-overlay [tags]="Tags" [users]="Users"/>
+      <it-add-task-overlay
+        [tags]="Tags"
+        [users]="Users"
+        (onCreateTask)="onAddTask($event)"
+      />
     </p-overlayPanel>
   </ng-template>
 </p-card>

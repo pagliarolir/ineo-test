@@ -88,6 +88,10 @@ export class ColumnComponent {
 
   filterQuery = toSignal(this.filters().valueChanges)
 
-  onAddTask() {
+  onAddTask(event: any) {
+    this.taskService.addTask({...event, column: this.column().id, userId: event.user.id})
+      .pipe(
+        switchMap(({column}: any) => this.taskService.getTasksByColumn(column))
+      ).subscribe()
   }
 }

@@ -45,6 +45,10 @@ span, label {
     color: $primary-dark;
   }
 
+  &.medium {
+    font-size: $font-size-medium;
+  }
+
   &.big {
     font-size: $font-size-big;
   }

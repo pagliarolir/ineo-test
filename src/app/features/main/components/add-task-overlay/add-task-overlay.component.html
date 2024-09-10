@@ -1,18 +1,29 @@
-<div>
-  <span class="primary bold">Nome task</span>
-  <input pInputText>
-
-</div>
-<span class="primary bold">Tag</span>
-<p-selectButton
-  [options]="tags()"
-  [multiple]="true"
-  optionLabel="label"
-  optionValue="id">
-</p-selectButton>
-<span class="primary bold">Assegna a</span>
-<div class="avatars">
-  @for (user of users(); track user.id) {
-    <img class="avatar" [src]="user.picture"/>
-  }
-</div>
+<form class="form" [formGroup]="formGroup()">
+  <div class="form-row">
+    <span class="primary bold medium">Nome task</span>
+    <input pInputText [formControl]="labelFormControl()">
+  </div>
+  <div class="form-row">
+    <span class="primary bold medium">Tag</span>
+    <p-selectButton
+      [formControl]="tagsFormControl()"
+      [options]="tags()"
+      [multiple]="true"
+      optionLabel="label"
+      optionValue="id">
+    </p-selectButton>
+  </div>
+  <div class="form-row">
+    <span class="primary bold medium">Assegna a {{ getUserFullName() }}</span>
+    <it-users-form-control
+      [users]="users()"
+      [formControl]="userFormControl()"
+    />
+  </div>
+  <p-button
+    class="primary confirm-add-button"
+    [label]="'Aggiungi'"
+    [disabled]="formGroup().invalid"
+    (onClick)="createTask()"
+  />
+</form>

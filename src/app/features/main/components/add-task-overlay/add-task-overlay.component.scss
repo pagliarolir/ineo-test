@@ -1,44 +1,22 @@
+@import "mixins/flex-container";
+
 :host {
   min-width: 20vw;
-  display: flex;
-  flex-direction: column;
+  min-height: 45vh;
+  @include flex-container(space-between, flex-start, column);
 
-  $avatar-size: 6rem;
-  $column-size: $avatar-size / 2;
+  .form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
 
-  .avatars {
-    display: grid;
-    grid-template-columns: repeat(var(--users-no), $column-size);
-    transition: grid-template-columns 500ms;
-    transition-delay: 200ms;
-    padding: 0.5rem;
+    .form-row {
+      gap: 0.75rem;
+      @include flex-container(flex-start, flex-start, column);
 
-    &:hover, &:focus-within {
-      $column-size: $avatar-size * 1.25;
-      grid-template-columns: repeat(var(--users-no), $column-size);
-      transition-delay: 0ms;
-    }
-
-    .avatar {
-      width: $avatar-size;
-      aspect-ratio: 1;
-      object-fit: cover;
-      border-radius: 100%;
-      border: 0.5rem solid white;
-      box-shadow: 0.25rem 0.25rem 0.5rem hsl(0 0% 0% / .2);
-      transition: scale 500ms;
-
-      &:hover, &:focus {
-        scale: 1.5;
-        z-index: 2;
-      }
-
-      // Only apply it if browser supports it
-      @supports selector(:has(+ *)) {
-        //Select previous and next element
-        &:hover + .avatar, &:has(+ .avatar:hover) {
-          scale: 1.25;
-        }
+      > :nth-child(n) {
+        width: 100%;
       }
     }
   }

@@ -18,181 +18,361 @@
       "id": 1,
       "label": "Do something nice for someone you care about",
       "column": 1,
-      "userId": 1
+      "userId": 1,
+      "tags": [
+        1,
+        2,
+        5
+      ]
     },
     {
       "id": 2,
       "label": "Memorize a poem",
       "column": 2,
-      "userId": 1
+      "userId": 1,
+      "tags": [
+        1,
+        2,
+        5
+      ]
     },
     {
       "id": 3,
       "label": "Watch a classic movie",
       "column": 3,
-      "userId": 1
+      "userId": 1,
+      "tags": [
+        1,
+        2,
+        5
+      ]
     },
     {
       "id": 4,
       "label": "Watch a documentary",
       "column": 1,
-      "userId": 1
+      "userId": 1,
+      "tags": [
+        1,
+        2,
+        5
+      ]
     },
     {
       "id": 5,
       "label": "Invest in cryptocurrency",
       "column": 2,
-      "userId": 1
+      "userId": 1,
+      "tags": [
+        1,
+        2,
+        5
+      ]
     },
     {
       "id": 6,
       "label": "Contribute code or a monetary donation to an open-source software project",
       "column": 3,
-      "userId": 1
+      "userId": 1,
+      "tags": [
+        1,
+        2,
+        5
+      ]
     },
     {
       "id": 7,
       "label": "Solve a Rubik's cube",
       "column": 1,
-      "userId": 1
+      "userId": 1,
+      "tags": [
+        1,
+        2,
+        5
+      ]
     },
     {
       "id": 8,
       "label": "Bake pastries for yourself and neighbor",
       "column": 1,
-      "userId": 1
+      "userId": 1,
+      "tags": [
+        1,
+        2,
+        5
+      ]
     },
     {
       "id": 9,
       "label": "Go see a Broadway production",
       "column": 2,
-      "userId": 1
+      "userId": 1,
+      "tags": [
+        1,
+        2,
+        3
+      ]
     },
     {
       "id": 10,
       "label": "Write a thank you letter to an influential person in your life",
       "column": 1,
-      "userId": 1
+      "userId": 1,
+      "tags": [
+        1,
+        2,
+        3,
+        5
+      ]
     },
     {
       "id": 11,
       "label": "Invite some friends over for a game night",
       "column": 2,
-      "userId": 1
+      "userId": 1,
+      "tags": [
+        1,
+        2,
+        3
+      ]
     },
     {
       "id": 12,
       "label": "Have a football scrimmage with some friends",
       "column": 2,
-      "userId": 1
+      "userId": 1,
+      "tags": [
+        1,
+        2,
+        3
+      ]
     },
     {
       "id": 13,
       "label": "Text a friend you haven't talked to in a long time",
       "column": 1,
-      "userId": 1
+      "userId": 1,
+      "tags": [
+        1,
+        3,
+        4
+      ]
     },
     {
       "id": 14,
       "label": "Organize pantry",
       "column": 2,
-      "userId": 1
+      "userId": 1,
+      "tags": [
+        1,
+        2,
+        3
+      ]
     },
     {
       "id": 15,
       "label": "Buy a new house decoration",
       "column": 1,
-      "userId": 1
+      "userId": 1,
+      "tags": [
+        1,
+        2,
+        3
+      ]
     },
     {
       "id": 16,
       "label": "Plan a vacation you've always wanted to take",
       "column": 1,
-      "userId": 2
+      "userId": 2,
+      "tags": [
+        1,
+        2,
+        3
+      ]
     },
     {
       "id": 17,
       "label": "Clean out car",
       "column": 2,
-      "userId": 2
+      "userId": 2,
+      "tags": [
+        1,
+        2,
+        3
+      ]
     },
     {
       "id": 18,
       "label": "Draw and color a Mandala",
       "column": 1,
-      "userId": 2
+      "userId": 2,
+      "tags": [
+        1,
+        2,
+        3
+      ]
     },
     {
       "id": 19,
       "label": "Create a cookbook with favorite recipes",
       "column": 1,
-      "userId": 2
+      "userId": 2,
+      "tags": [
+        1,
+        4,
+        5
+      ]
     },
     {
       "id": 20,
       "label": "Bake a pie with some friends",
       "column": 2,
-      "userId": 2
+      "userId": 2,
+      "tags": [
+        1,
+        4,
+        5
+      ]
     },
     {
       "id": 21,
       "label": "Create a compost pile",
       "column": 2,
-      "userId": 2
+      "userId": 2,
+      "tags": [
+        1,
+        4,
+        5
+      ]
     },
     {
       "id": 22,
       "label": "Take a hike at a local park",
       "column": 1,
-      "userId": 2
+      "userId": 2,
+      "tags": [
+        1,
+        4,
+        5
+      ]
     },
     {
       "id": 23,
       "label": "Take a class at local community center that interests you",
       "column": 3,
-      "userId": 2
+      "userId": 2,
+      "tags": [
+        1,
+        4,
+        5
+      ]
     },
     {
       "id": 24,
       "label": "Research a topic interested in",
       "column": 3,
-      "userId": 2
+      "userId": 2,
+      "tags": [
+        2,
+        3
+      ]
     },
     {
       "id": 25,
       "label": "Plan a trip to another country",
       "column": 2,
-      "userId": 2
+      "userId": 2,
+      "tags": [
+        2,
+        3
+      ]
     },
     {
       "id": 26,
       "label": "Improve touch typing",
       "column": 2,
-      "userId": 3
+      "userId": 3,
+      "tags": [
+        2,
+        3
+      ]
     },
     {
       "id": 27,
       "label": "Learn Express.js",
       "column": 2,
-      "userId": 3
+      "userId": 3,
+      "tags": [
+        2,
+        3
+      ]
     },
     {
       "id": 28,
       "label": "Learn calligraphy",
       "column": 2,
-      "userId": 3
+      "userId": 3,
+      "tags": [
+        2,
+        3
+      ]
     },
     {
       "id": 29,
       "label": "Have a photo session with some friends",
       "column": 3,
-      "userId": 3
+      "userId": 3,
+      "tags": [
+        2,
+        3
+      ]
     },
     {
       "id": 30,
       "label": "Go to the gym",
       "column": 3,
-      "userId": 3
+      "userId": 3,
+      "tags": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "label": "Prova",
+      "user": {
+        "id": 2,
+        "firstName": "Sebastiano",
+        "lastName": "Esposito",
+        "role": "developer",
+        "picture": "https://xsgames.co/randomusers/avatar.php?g=male"
+      },
+      "tags": [
+        1,
+        2
+      ],
+      "column": 2,
+      "userId": 2,
+      "id": 31
+    },
+    {
+      "label": "asdc",
+      "user": {
+        "id": 2,
+        "firstName": "Sebastiano",
+        "lastName": "Esposito",
+        "role": "developer",
+        "picture": "https://xsgames.co/randomusers/avatar.php?g=male"
+      },
+      "tags": [
+        2,
+        4
+      ],
+      "column": 2,
+      "userId": 2,
+      "id": 32
     }
   ]
 }
