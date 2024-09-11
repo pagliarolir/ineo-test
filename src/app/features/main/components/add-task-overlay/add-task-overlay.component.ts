@@ -1,7 +1,7 @@
 import {Component, computed, effect, ElementRef, EventEmitter, inject, input, Output, signal} from '@angular/core';
 import {SelectButtonModule} from "primeng/selectbutton";
-import {Tag} from "../../../../models/interfaces/tag";
-import {User} from "../../../../models/interfaces/user";
+import {Tag} from "@models/interfaces/tag";
+import {User} from "@models/interfaces/user";
 import {InputTextModule} from "primeng/inputtext";
 import {Button} from "primeng/button";
 import {TooltipModule} from "primeng/tooltip";

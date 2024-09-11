@@ -1,18 +1,20 @@
 import {Component, input, signal} from '@angular/core';
-import {User} from "../../../../models/interfaces/user";
+import {User} from "@models/interfaces/user";
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
-import {NgClass} from "@angular/common";
+import {NgClass, NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'it-users-form-control',
   standalone: true,
   imports: [
-    NgClass
+    NgClass,
+    NgOptimizedImage
   ],
   template: `
     <div class="avatars">
       @for (user of users(); track user.id) {
         <img class="avatar"
+             alt=""
              [ngClass]="{'selected': this.value()?.id === user.id}"
              [src]="user.picture"
              (click)="setValue(user)"
@@ -34,6 +36,7 @@ export class UsersFormControlComponent implements ControlValueAccessor {
   value = signal<User | null>(null)
   disabled = signal(false)
 
+  /* CVA Implementation in order to force this component to behave like a Form Control */
   onChange: (value: User) => void = () => {
   }
   onTouched: () => void = () => {

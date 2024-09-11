@@ -1,14 +1,11 @@
-import {Component} from '@angular/core';
-import {CardModule} from "primeng/card";
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {MainComponent} from "../../features/main/main.component";
 
 @Component({
   selector: 'it-home',
   standalone: true,
-  imports: [
-    CardModule,
-    MainComponent
-  ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [MainComponent],
   template: `
     <it-main/>`,
   styles: `

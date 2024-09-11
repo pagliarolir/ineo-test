@@ -1,4 +1,5 @@
 export enum SortingOrderEnum {
-  ASC,
-  DESC
+  ASC = 'asc',
+  DESC = 'desc',
+  NO_SORT = 'no_sort'
 }

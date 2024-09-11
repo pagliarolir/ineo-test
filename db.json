@@ -26,17 +26,6 @@
       ]
     },
     {
-      "id": 2,
-      "label": "Memorize a poem",
-      "column": 2,
-      "userId": 1,
-      "tags": [
-        1,
-        2,
-        5
-      ]
-    },
-    {
       "id": 3,
       "label": "Watch a classic movie",
       "column": 3,

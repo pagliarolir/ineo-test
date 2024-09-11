@@ -8,21 +8,15 @@
   box-shadow: none;
 }
 
-.p-icon-field {
-  height: 2rem;
-  display: flex;
-
-}
-
 input.p-inputtext, textarea.p-inputtext {
   width: 100%;
   @include border-solid($primary);
   border-radius: $border-radius-default;
   height: $form-field-height-default;
-  padding: 0.5rem;
-  font-size: $font-size-small;
+  padding: 0.25rem;
+  font-size: $font-size-default;
   font-weight: $font-weight-bold;
-  color: $black;
+  color: $primary;
 
   &.big {
     height: $form-field-height-big

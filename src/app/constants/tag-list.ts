@@ -1,4 +1,4 @@
-import {Tag} from "../models/interfaces/tag";
+import {Tag} from "@models/interfaces/tag";
 
 export const Tags: Tag[] = [
   {
