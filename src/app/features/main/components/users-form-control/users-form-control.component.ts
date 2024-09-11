@@ -1,4 +1,4 @@
-import {Component, input, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, input, signal} from '@angular/core';
 import {User} from "@models/interfaces/user";
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 import {NgClass, NgOptimizedImage} from "@angular/common";
@@ -15,7 +15,7 @@ import {NgClass, NgOptimizedImage} from "@angular/common";
       @for (user of users(); track user.id) {
         <img class="avatar"
              alt=""
-             [ngClass]="{'selected': this.value()?.id === user.id}"
+             [ngClass]="{'selected': this.value()?.id === user.id, 'sibling': this.isDirectSibling(user)}"
              [src]="user.picture"
              (click)="setValue(user)"
         />
@@ -27,7 +27,8 @@ import {NgClass, NgOptimizedImage} from "@angular/common";
     provide: NG_VALUE_ACCESSOR,
     useExisting: UsersFormControlComponent,
     multi: true
-  }]
+  }],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UsersFormControlComponent implements ControlValueAccessor {
 
@@ -67,5 +68,27 @@ export class UsersFormControlComponent implements ControlValueAccessor {
       this.onChange(this.value()!)
     }
     this.onTouched()
+  }
+
+  /* Check if an element has direct sibling among all the users in the array
+   * This method is only for styling purpose
+   */
+  isDirectSibling(user: User): boolean {
+    //Return if no user is selected
+    if (!this.value()?.id) return false;
+    //Find selected user's ID in the array
+    const index = this.users().indexOf(this.value()!);
+    return (
+      /* Check if it has a previous sibling.
+       * index > 0 implies it's not the first element in the array
+       * Then check if the past user the provided user
+       */
+      (index > 0 && this.users()[index - 1].id === user.id) ||
+      /* Check if it has a next sibling.
+       * index this.users().length - 1 implies it's not the last element in the array
+       * Then check if the next user the provided user
+       */
+      (index < this.users().length - 1 && this.users()[index + 1].id === user.id)
+    );
   }
 }

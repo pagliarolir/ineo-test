@@ -29,6 +29,7 @@
       box-shadow: 0.25rem 0.25rem 0.5rem hsl(0 0% 0% / .2);
       transition: scale $transition-value;
       cursor: pointer;
+      //z-index: 1;
 
       &:hover, &:focus {
         scale: 1.4;
@@ -37,6 +38,11 @@
 
       &.selected {
         border-color: $primary;
+        z-index: 3;
+      }
+
+      &.sibling {
+        z-index: 2;
       }
 
       // Only apply it if browser supports it
