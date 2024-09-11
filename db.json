@@ -341,38 +341,13 @@
       ]
     },
     {
+      "userId": 2,
+      "column": 2,
+      "tags": [
+        1
+      ],
       "label": "Prova",
-      "user": {
-        "id": 2,
-        "firstName": "Sebastiano",
-        "lastName": "Esposito",
-        "role": "developer",
-        "picture": "https://xsgames.co/randomusers/avatar.php?g=male"
-      },
-      "tags": [
-        1,
-        2
-      ],
-      "column": 2,
-      "userId": 2,
       "id": 31
-    },
-    {
-      "label": "asdc",
-      "user": {
-        "id": 2,
-        "firstName": "Sebastiano",
-        "lastName": "Esposito",
-        "role": "developer",
-        "picture": "https://xsgames.co/randomusers/avatar.php?g=male"
-      },
-      "tags": [
-        2,
-        4
-      ],
-      "column": 2,
-      "userId": 2,
-      "id": 32
     }
   ]
 }

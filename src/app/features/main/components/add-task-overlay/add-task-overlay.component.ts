@@ -62,4 +62,4 @@ export class AddTaskOverlayComponent {
   }
 }
 
-type AddTaskPayload = { user: User | null, label: string, tags: number[] }
+export type AddTaskPayload = { user: User | null, label: string, tags: number[] }

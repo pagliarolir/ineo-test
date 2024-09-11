@@ -50,7 +50,7 @@
       <it-add-task-overlay
         [tags]="Tags"
         [users]="Users"
-        (onCreateTask)="onAddTask($event)"
+        (onCreateTask)="onAddTask($event); addTaskOp.toggle(true)"
       />
     </p-overlayPanel>
   </ng-template>

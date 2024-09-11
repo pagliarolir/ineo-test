@@ -16,9 +16,11 @@ import {InputTextModule} from "primeng/inputtext";
 import {Icons} from "../../../../models/enums/icons.enum";
 import {RippleModule} from "primeng/ripple";
 import {OverlayPanelModule} from "primeng/overlaypanel";
-import {AddTaskOverlayComponent} from "../add-task-overlay/add-task-overlay.component";
+import {AddTaskOverlayComponent, AddTaskPayload} from "../add-task-overlay/add-task-overlay.component";
 import {Tags} from "../../../../constants/tag-list";
 import {Users} from "../../../../constants/users";
+import {Task} from "../../../../models/interfaces/task";
+import {JsonPipe} from "@angular/common";
 
 @Component({
   selector: 'it-column',
@@ -36,6 +38,7 @@ import {Users} from "../../../../constants/users";
     RippleModule,
     OverlayPanelModule,
     AddTaskOverlayComponent,
+    JsonPipe,
   ],
   templateUrl: './column.component.html',
   styleUrl: './column.component.scss'
@@ -72,7 +75,7 @@ export class ColumnComponent {
         switchMap((col) => this.taskService.getTasksByColumn(col.id)))
     );
 
-  /* Converts form's value changes into a signal */
+  /* Converts form's valuechanges into a signal */
   searchQuery = toSignal(this.search().valueChanges
     .pipe(
       distinctUntilChanged(),
@@ -81,17 +84,21 @@ export class ColumnComponent {
   )
 
   filteredTasks = computed(() => {
-    /* Filter tasks: if searchQuery has a value, return only tasks with specified params (non case-sensitive), else return the whole array */
+    /* Filter tasks: if searchQuery has a value, return only tasks with specified params (non-case-sensitive), else return the whole array */
     return this.searchQuery() ? this.tasks()?.filter(el => el.label.toLowerCase().includes(this.searchQuery()!.toLowerCase())) : this.tasks();
   })
 
 
   filterQuery = toSignal(this.filters().valueChanges)
 
-  onAddTask(event: any) {
-    this.taskService.addTask({...event, column: this.column().id, userId: event.user.id})
-      .pipe(
-        switchMap(({column}: any) => this.taskService.getTasksByColumn(column))
-      ).subscribe()
+  onAddTask(event: AddTaskPayload) {
+    const params: Omit<Task, 'id'> = {
+      userId: event.user?.id!,
+      column: this.column().id,
+      tags: event.tags,
+      label: event.label
+    }
+    this.taskService.addTask(params)
+      .subscribe()
   }
 }
