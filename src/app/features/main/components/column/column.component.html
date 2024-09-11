@@ -1,4 +1,4 @@
-<p-card class="no-shadow">
+<p-card>
   <ng-template pTemplate="header">
     <div class="card-header">
       <span>{{ column().label }}</span>
@@ -11,7 +11,7 @@
             pInputText
           />
         </p-iconField>
-        <p-button class="primary-light" [icon]="sortParams().icon" (onClick)="toggleSort()"/>
+        <p-button class="contrast" [icon]="sortParams().icon" (onClick)="toggleSort()"/>
       </form>
     </div>
   </ng-template>
@@ -39,11 +39,11 @@
     }
   </ng-template>
   <ng-template pTemplate="footer">
-    <div class="add-task ripple primary"
+    <div class="add-task ripple"
          pRipple
          (click)="addTaskOp.toggle($event)">
-      <i [class]="Icons.PLUS"></i>
-      <span class="primary bold">Aggiungi task</span>
+      <i [class]="Icons.PLUS" class="primary-dark border"></i>
+      <span class="primary-dark bold">Aggiungi task</span>
     </div>
     <p-overlayPanel #addTaskOp>
       <it-add-task-overlay

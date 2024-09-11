@@ -1,6 +1,7 @@
 @import 'colors';
 @import 'variables';
 @import 'mixins/set-color';
+@import 'mixins/border-solid';
 
 .p-button:not(.p-button-icon-only) {
   padding: 0.5rem;
@@ -89,7 +90,7 @@ p-button {
     }
   }
 
-  &.cancel {
+  &.cancel, &.contrast {
     .p-button, .p-button-icon-only {
       @include set-color($white, $primary, $primary);
     }
@@ -98,6 +99,15 @@ p-button {
   &.success {
     .p-button, .p-button-icon-only {
       @include set-color($success, $white, $success);
+    }
+  }
+
+  &.accent-pink {
+    .p-button, .p-button-icon-only {
+      @include set-color($white, $accent-pink2 /*$bg3*/
+      , $accent-pink2);
+      font-weight: $font-weight-bolder;
+      text-shadow: $accent-pink-icon-border
     }
   }
 
@@ -161,7 +171,7 @@ p-button {
       opacity: 0;
       font-size: 2rem;
       top: -0.25rem;
-      font-weight: 100;
+      font-weight: $font-weight-lighter;
       right: -1rem;
       transition: 0.5s;
     }

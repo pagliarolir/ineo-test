@@ -4,6 +4,7 @@
 $body-background: navajowhite;
 
 /* Fonts */
+$font-weight-lighter: 100;
 $font-weight-light: 200;
 $font-weight-regular: 400;
 $font-weight-semibold: 500;
@@ -51,8 +52,10 @@ $title-line-height: 1.4rem;
 $sidebar-width: 3rem;
 
 /* Box Shadow */
-$card-box-shadow: -6px 6px 12px #c7c7c7, 6px -6px 12px #ffffff;
-$block-box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.25), -2px -2px 3px 0 rgba(255, 255, 255, 0.3);
+$card-box-shadow: 4px 6px 10px $primary;
+$block-box-shadow: 2px 4px 8px $primary;
+
+$big-box-shadow: 8px 8px 18px rgba(0, 0, 0, 0.25), -8px -8px 18px rgba(255, 255, 255, 0.25);
 
 /* Icons */
 $icon-size-default: 1rem;
@@ -63,7 +66,8 @@ $icon-size-small: 0.875rem;
 $icon-button-size-bigger: 3rem;
 $icon-button-size-small: 1.5rem;
 
-$icon-border: -0.75px 0 #000, 0 0.75px #000, 0.75px 0 #000, 0 -0.75px #000;
+$icon-border: -0.5px 0 $primary, 0 0.5px $primary, 0.5px 0 $primary, 0 -0.5px $primary;
+$accent-pink-icon-border: -0.5px 0 $accent-pink2, 0 0.5px $accent-pink2, 0.5px 0 $accent-pink2, 0 -0.5px $accent-pink2;
 
 /* Icon Button */
 $icon-button-size: 2rem;

@@ -11,7 +11,7 @@ p-card {
 
     .p-card-header {
       height: $card-header-height;
-      background-color: $bg2;
+      background-color: $secondary;
       border-top-right-radius: $border-radius-default;
       border-top-left-radius: $border-radius-default;
       @include flex-container(flex-start, center);
@@ -40,7 +40,7 @@ p-card {
 
       span:not(.p-button-icon) {
         font-weight: $font-weight-bold;
-        color: $black;
+        color: $primary-dark;
 
         &:not(.pi) {
           font-size: $font-size-big;
@@ -63,7 +63,7 @@ p-card {
 
       .p-card-footer {
         height: $card-footer-height;
-        background-color: $bg2;
+        background-color: $secondary;
         border-bottom-right-radius: $border-radius-default;
         border-bottom-left-radius: $border-radius-default;
         @include flex-container(flex-start, center);

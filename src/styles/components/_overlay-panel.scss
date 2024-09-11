@@ -4,6 +4,7 @@
 .p-overlaypanel {
   background: navajowhite;
   border-radius: $border-radius-default;
+  box-shadow: $block-box-shadow;
 
   &::before, &::after {
     display: none;

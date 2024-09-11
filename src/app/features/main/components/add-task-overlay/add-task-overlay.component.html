@@ -1,10 +1,10 @@
 <form class="form" [formGroup]="formGroup()">
   <div class="form-row">
-    <span class="primary bold medium">Nome task</span>
+    <span class="primary-dark bold medium">Nome task</span>
     <input pInputText [formControl]="labelFormControl()">
   </div>
   <div class="form-row">
-    <span class="primary bold medium">Tag</span>
+    <span class="primary-dark bold medium">Tag</span>
     <p-selectButton
       [formControl]="tagsFormControl()"
       [options]="tags()"
@@ -14,14 +14,14 @@
     </p-selectButton>
   </div>
   <div class="form-row">
-    <span class="primary bold medium">Assegna a {{ getUserFullName() }}</span>
+    <span class="primary-dark bold medium">Assegna a {{ getUserFullName() }}</span>
     <it-users-form-control
       [users]="users()"
       [formControl]="userFormControl()"
     />
   </div>
   <p-button
-    class="primary confirm-add-button"
+    class="contrast confirm-add-button"
     [label]="'Aggiungi'"
     [disabled]="formGroup().invalid"
     (onClick)="createTask()"
