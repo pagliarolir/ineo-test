@@ -19,10 +19,10 @@ import {Tags} from "@constants/tag-list"
 import {Users} from "@constants/users"
 import {Task} from "@models/interfaces/task"
 import {Button} from "primeng/button"
-import {JsonPipe} from "@angular/common";
 import {SortingOrderEnum} from "@models/enums/sorting-order";
 import {TypedObjectFromEnum} from "@helpers/typed-object-from-enum";
 import {SortParams} from "@models/types/sort-params";
+import {SkeletonCardComponent} from "../skeleton-card/skeleton-card.component";
 
 @Component({
   selector: 'it-column',
@@ -40,7 +40,7 @@ import {SortParams} from "@models/types/sort-params";
     OverlayPanelModule,
     AddTaskOverlayComponent,
     Button,
-    JsonPipe,
+    SkeletonCardComponent,
   ],
   templateUrl: './column.component.html',
   styleUrl: './column.component.scss',

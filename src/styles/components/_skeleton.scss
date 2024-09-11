@@ -1,0 +1,8 @@
+p-skeleton.p-element.skeleton-card {
+  display: flex;
+  height: 100%;
+
+  .p-skeleton.p-component {
+    height: 100% !important;
+  }
+}

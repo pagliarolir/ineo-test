@@ -1,0 +1,8 @@
+@import 'variables';
+
+:host {
+  width: 100%;
+  min-height: 20%;
+  border-radius: $border-radius-default;
+  box-shadow: $block-box-shadow;
+}

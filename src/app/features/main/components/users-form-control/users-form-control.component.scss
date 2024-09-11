@@ -1,9 +1,10 @@
 @import "colors";
+@import "variables";
 
 :host {
 
   $avatar-size: 6rem;
-  $column-size: $avatar-size / 2;
+  $column-size: calc($avatar-size / 2);
   $transition-value: 500ms;
 
   .avatars {
@@ -29,20 +30,19 @@
       box-shadow: 0.25rem 0.25rem 0.5rem hsl(0 0% 0% / .2);
       transition: scale $transition-value;
       cursor: pointer;
-      //z-index: 1;
 
       &:hover, &:focus {
         scale: 1.4;
-        z-index: 2;
+        z-index: $z-index-medium;
       }
 
       &.selected {
         border-color: $primary;
-        z-index: 3;
+        z-index: $z-index-high;
       }
 
       &.sibling {
-        z-index: 2;
+        z-index: $z-index-medium;
       }
 
       // Only apply it if browser supports it
