@@ -309,16 +309,6 @@
       ]
     },
     {
-      "id": 28,
-      "label": "Learn calligraphy",
-      "column": 2,
-      "userId": 3,
-      "tags": [
-        2,
-        3
-      ]
-    },
-    {
       "id": 29,
       "label": "Have a photo session with some friends",
       "column": 3,
@@ -359,25 +349,6 @@
       ],
       "label": "pippo",
       "id": 32
-    },
-    {
-      "userId": 2,
-      "column": 2,
-      "tags": [
-        4
-      ],
-      "label": "asdc",
-      "id": 33
-    },
-    {
-      "userId": 2,
-      "column": 2,
-      "tags": [
-        5,
-        4
-      ],
-      "label": "sdc",
-      "id": 34
     },
     {
       "userId": 3,

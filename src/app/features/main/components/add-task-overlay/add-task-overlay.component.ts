@@ -61,6 +61,7 @@ export class AddTaskOverlayComponent {
     this.onCreateTask.emit(payload)
     this.formGroup().reset()
   }
+
 }
 
 export type AddTaskPayload = { user: User | null, label: string, tags: number[] }

@@ -34,4 +34,12 @@ export class TaskService {
       return this.#tasks.update(items => items.map(el => el.id === task.id ? {...updatedTask} : el));
     })
   }
+
+  deleteTask(taskId: number) {
+    this.http.delete<void>(`${this._url}/${taskId}`).pipe(
+      catchError(() => throwError(() => ({error: 'Errore nella cancellazione del task'}))),
+    ).subscribe(() => {
+      return this.#tasks.update(items => items.filter(el => el.id !== taskId));
+    })
+  }
 }

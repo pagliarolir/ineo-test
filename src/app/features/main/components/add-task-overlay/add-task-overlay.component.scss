@@ -5,6 +5,7 @@
   min-height: 45vh;
   @include flex-container(space-between, flex-start, column);
 
+
   .form {
     width: 100%;
     display: flex;
