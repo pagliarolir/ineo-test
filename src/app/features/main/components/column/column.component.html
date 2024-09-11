@@ -1,4 +1,4 @@
-<p-card>
+<p-card class="no-shadow">
   <ng-template pTemplate="header">
     <div class="card-header">
       <span>{{ column().label }}</span>
@@ -11,19 +11,7 @@
             pInputText
           />
         </p-iconField>
-        <p-multiSelect
-          [filter]="false"
-          [formControl]="filters()"
-          [displaySelectedLabel]="false"
-          [options]="filterOptions()"
-          optionLabel="label">
-          <ng-template pTemplate="dropdownicon">
-            <p-inputIcon styleClass="pi pi-filter"/>
-          </ng-template>
-          <ng-template pTemplate="item" let-option>
-            {{ option }}
-          </ng-template>
-        </p-multiSelect>
+        <p-button class="primary-light" [icon]="Icons.SORT_ALT"/>
       </form>
     </div>
   </ng-template>
@@ -33,6 +21,8 @@
         <it-task
           [highlight]="true"
           [task]="task"
+          (onEditTask)="editTask(task)"
+          (onDeleteTask)="deleteTask(task)"
         />
       } @empty {
         <it-no-data-box [label]="'No Data'" [padding]="0"></it-no-data-box>
@@ -50,7 +40,7 @@
       <it-add-task-overlay
         [tags]="Tags"
         [users]="Users"
-        (onCreateTask)="onAddTask($event); addTaskOp.toggle(true)"
+        (onCreateTask)="createTask($event); addTaskOp.toggle(true)"
       />
     </p-overlayPanel>
   </ng-template>

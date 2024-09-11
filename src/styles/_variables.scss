@@ -28,7 +28,8 @@ $z-index-very-high: 1001;
 $z-index-high: 3;
 
 /* Border */
-$border-radius-default: 1rem;
+$border-radius-default: 0.5rem;
+$border-radius-high: 1rem;
 
 /* COMPONENT VARIABLES */
 
@@ -38,8 +39,8 @@ $form-field-height-default: 2.5rem;
 $form-field-height-big: 3rem;
 
 /* Card */
-$card-header-height: 4rem;
-$card-footer-height: 5rem;
+$card-header-height: 7vh;
+$card-footer-height: 8vh;
 
 /* Navbar */
 $navbar-height: 3.5rem;

@@ -1,7 +1,7 @@
-import {inject, Injectable} from "@angular/core";
+import {inject, Injectable, signal} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment.development";
-import {catchError, Observable, throwError} from "rxjs";
+import {catchError, throwError} from "rxjs";
 import {Task} from "../models/interfaces/task";
 
 @Injectable({
@@ -11,13 +11,27 @@ export class TaskService {
   private http = inject(HttpClient)
   private _url = `${environment.apiUrl}${environment.endpoints.tasks}`;
 
-  getTasksByColumn(columnId: number): Observable<Task[]> {
-    return this.http.get<Task[]>(this._url, {params: {column: columnId}}).pipe(
+  #tasks = signal<Task[]>([])
+  tasks = this.#tasks.asReadonly()
+
+  getAllTasks() {
+    this.http.get<Task[]>(this._url,).pipe(
       catchError(() => throwError(() => ({error: 'Errore nel caricamento dei task'})))
-    )
+    ).subscribe(tasks => this.#tasks.set(tasks))
   }
 
-  addTask(payload: Omit<Task, 'id'>): Observable<Task> {
-    return this.http.post<Task>(this._url, payload)
+
+  addTask(payload: Omit<Task, 'id'>) {
+    this.http.post<Task>(this._url, payload).pipe(
+      catchError(() => throwError(() => ({error: 'Errore nella creazione del task'}))),
+    ).subscribe(newTask => this.#tasks.update(items => [...items, newTask]))
+  }
+
+  editTask(task: Task) {
+    this.http.put<Task>(`${this._url}/${task.id}`, task).pipe(
+      catchError(() => throwError(() => ({error: 'Errore nella modifica del task'}))),
+    ).subscribe(updatedTask => {
+      return this.#tasks.update(items => items.map(el => el.id === task.id ? {...updatedTask} : el));
+    })
   }
 }

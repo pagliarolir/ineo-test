@@ -12,7 +12,14 @@ import {toSignal} from "@angular/core/rxjs-interop";
     AsyncPipe
   ],
   templateUrl: './main.component.html',
-  styleUrl: './main.component.scss'
+  styles:
+    `
+      :host {
+        padding: 1rem;
+        height: 100%;
+        display: flex;
+        gap: 1rem;
+      }`
 })
 export class MainComponent {
   private columnService = inject(ColumnsService)

@@ -1,4 +1,4 @@
-import {Component, computed, DestroyRef, inject, input, signal} from '@angular/core';
+import {Component, computed, DestroyRef, inject, input, OnInit, signal} from '@angular/core';
 import {CardModule} from "primeng/card";
 import {NoDataBoxComponent} from "../../../../shared/no-data-box/no-data-box.component";
 import {FormBuilder, ReactiveFormsModule} from "@angular/forms";
@@ -7,8 +7,8 @@ import {InputIconModule} from "primeng/inputicon";
 import {MultiSelectModule} from "primeng/multiselect";
 import {Column} from "../../../../models/interfaces/column";
 import {MultiFilterType} from "../../../../helpers/multi-filter";
-import {debounceTime, distinctUntilChanged, filter, switchMap} from "rxjs";
-import {takeUntilDestroyed, toObservable, toSignal} from "@angular/core/rxjs-interop";
+import {debounceTime, distinctUntilChanged} from "rxjs";
+import {takeUntilDestroyed, toSignal} from "@angular/core/rxjs-interop";
 import {TaskService} from "../../../../services/task.service";
 import {TaskComponent} from "../task/task.component";
 import {HighlightDirective} from "../../../../directives/highlight.directive";
@@ -21,6 +21,7 @@ import {Tags} from "../../../../constants/tag-list";
 import {Users} from "../../../../constants/users";
 import {Task} from "../../../../models/interfaces/task";
 import {JsonPipe} from "@angular/common";
+import {Button} from "primeng/button";
 
 @Component({
   selector: 'it-column',
@@ -39,11 +40,12 @@ import {JsonPipe} from "@angular/common";
     OverlayPanelModule,
     AddTaskOverlayComponent,
     JsonPipe,
+    Button,
   ],
   templateUrl: './column.component.html',
   styleUrl: './column.component.scss'
 })
-export class ColumnComponent {
+export class ColumnComponent implements OnInit {
 
   private fb = inject(FormBuilder)
   private destroyRef = inject(DestroyRef)
@@ -65,15 +67,11 @@ export class ColumnComponent {
   Tags = Tags
   Users = Users
 
-  /* Get task list for each column
-   * Convert column in an observable in order to provide its ID to getTasksByColumn
-   */
-  tasks =
-    toSignal(toObservable<Column>(this.column)
-      .pipe(
-        filter((col => !!col.id)),
-        switchMap((col) => this.taskService.getTasksByColumn(col.id)))
-    );
+  tasks = computed(() => this.taskService.tasks().filter(task => task.column === this.column().id))
+
+  ngOnInit() {
+    this.taskService.getAllTasks()
+  }
 
   /* Converts form's valuechanges into a signal */
   searchQuery = toSignal(this.search().valueChanges
@@ -91,7 +89,7 @@ export class ColumnComponent {
 
   filterQuery = toSignal(this.filters().valueChanges)
 
-  onAddTask(event: AddTaskPayload) {
+  createTask(event: AddTaskPayload) {
     const params: Omit<Task, 'id'> = {
       userId: event.user?.id!,
       column: this.column().id,
@@ -99,6 +97,13 @@ export class ColumnComponent {
       label: event.label
     }
     this.taskService.addTask(params)
-      .subscribe()
+  }
+
+  editTask(task: Task) {
+    this.taskService.editTask(task)
+  }
+
+  deleteTask(task: Task) {
+
   }
 }

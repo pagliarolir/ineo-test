@@ -21,6 +21,6 @@ export class TaskComponent {
   task = input.required<Task>()
   Icons = Icons;
 
-  @Output() selectTask = new EventEmitter<void>()
-  @Output() editTask = new EventEmitter<void>()
+  @Output() onEditTask = new EventEmitter<void>()
+  @Output() onDeleteTask = new EventEmitter<void>()
 }

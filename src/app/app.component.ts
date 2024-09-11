@@ -10,8 +10,7 @@ import {RouterOutlet} from '@angular/router';
   `,
   styles: `:host {
     height: 100%;
-    display: flex;
-    flex-direction: column;
+    display: block;
   }`
 })
 export class AppComponent {

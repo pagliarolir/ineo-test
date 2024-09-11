@@ -3,7 +3,7 @@
 @import 'mixins/border-solid';
 @import 'mixins/flex-container';
 
-:host ::ng-deep {
+:host {
   padding: 0.5rem;
   width: 100%;
   display: flex;
@@ -14,8 +14,4 @@
   gap: 0.5rem;
   border-radius: $border-radius-default;
   box-shadow: $block-box-shadow;
-
-  .p-tag {
-    font-size: $font-size-small;
-  }
 }

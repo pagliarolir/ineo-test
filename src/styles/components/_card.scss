@@ -38,7 +38,7 @@ p-card {
         }
       }
 
-      span:not(.multiselect-description, .p-badge) {
+      span:not(.p-button-icon) {
         font-weight: $font-weight-bold;
         color: $black;
 
@@ -52,10 +52,9 @@ p-card {
       height: calc(100% - $card-header-height);
       @include flex-container(flex-start, stretch, column);
       padding: 0;
-      //background: $bg2;
 
       .p-card-content {
-        height: 100%;
+        height: calc(100% - $card-footer-height);
         padding: 0;
         flex: 1;
         display: flex;

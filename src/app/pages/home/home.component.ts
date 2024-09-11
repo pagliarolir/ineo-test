@@ -13,8 +13,7 @@ import {MainComponent} from "../../features/main/main.component";
     <it-main/>`,
   styles: `
     :host {
-      flex: 1;
-      display: flex;
+      height: 100%;
     }`
 })
 export class HomeComponent {

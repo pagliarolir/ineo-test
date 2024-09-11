@@ -59,6 +59,7 @@ export class AddTaskOverlayComponent {
       tags: this.tagsFormControl().value!
     }
     this.onCreateTask.emit(payload)
+    this.formGroup().reset()
   }
 }
 
