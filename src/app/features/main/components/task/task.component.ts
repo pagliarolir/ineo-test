@@ -4,7 +4,7 @@ import {HighlightDirective} from "@directives/highlight.directive";
 import {Button} from "primeng/button";
 import {Icons} from "@models/enums/icons.enum";
 import {Tags} from "@constants/tag-list";
-import {JsonPipe} from "@angular/common";
+import {Users} from "@constants/users";
 
 @Component({
   selector: 'it-task',
@@ -12,7 +12,6 @@ import {JsonPipe} from "@angular/common";
   imports: [
     HighlightDirective,
     Button,
-    JsonPipe
   ],
   templateUrl: './task.component.html',
   styleUrl: './task.component.scss',
@@ -22,6 +21,7 @@ export class TaskComponent {
 
   task = input.required<Task>()
   tags = computed(() => Tags.filter(tag => this.task().tags.includes(tag.id)))
+  getUser = computed(() => Users.find(el => el.id === this.task().userId))
   Icons = Icons;
 
   @Output() onEditTask = new EventEmitter<void>()

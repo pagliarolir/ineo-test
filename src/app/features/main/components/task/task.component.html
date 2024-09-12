@@ -4,7 +4,11 @@
   }
 </div>
 <span class="bold uppercase primary">{{ task().label }}</span>
-<div class="icons-wrapper">
-  <p-button class="contrast border" [icon]="Icons.PENCIL" (onClick)="onEditTask.emit()"/>
-  <p-button class="contrast border" [icon]="Icons.TRASH" (onClick)="onDeleteTask.emit()"/>
+<div class="bottom">
+  <img class="user-pic" [src]="getUser()?.picture">
+
+  <div class="icons">
+    <p-button class="contrast border" [icon]="Icons.PENCIL" (onClick)="onEditTask.emit()"/>
+    <p-button class="contrast border" [icon]="Icons.TRASH" (onClick)="onDeleteTask.emit()"/>
+  </div>
 </div>

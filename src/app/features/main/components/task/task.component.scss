@@ -24,4 +24,22 @@
       flex: 0 1 25%;
     }
   }
+
+  .bottom {
+    position: relative;
+
+    .user-pic {
+      width: 15%;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      border-radius: $border-radius-round;
+      position: absolute;
+      bottom: 0;
+    }
+
+    .icons {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
 }
