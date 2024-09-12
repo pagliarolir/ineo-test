@@ -1,0 +1,10 @@
+<it-dialog
+  [title]="'Modifica'"
+  [titleParam]="'Task'"
+  [visible]="visible()"
+  [width]="40"
+  (close)="close.emit()"
+  (confirm)="confirmEdit.emit()"
+>
+  <it-manage-task [users]="users()" [tags]="tags()"/>
+</it-dialog>

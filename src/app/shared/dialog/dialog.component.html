@@ -1,0 +1,38 @@
+<p-dialog
+  [closable]="true"
+  [focusOnShow]="false"
+  [draggable]="false"
+  [visible]="visible()"
+  [style]="getStyle()"
+>
+  <ng-template pTemplate="header">
+    @if (title()) {
+      <span class="title">{{ title() }}</span>
+    }
+    @if (titleParam()) {
+      <span class="title bold">{{ titleParam() }}</span>
+    }
+  </ng-template>
+
+  <ng-content></ng-content>
+
+  @if (hasFooter()) {
+    <ng-template pTemplate="footer">
+      @if (canClose()) {
+        <p-button
+          class="cancel"
+          [label]="cancelLabel()"
+          (onClick)="close.emit()"
+        />
+      }
+      @if (canConfirm()) {
+        <p-button
+          class="primary confirm"
+          [label]="confirmLabel()"
+          [disabled]="disableConfirm()"
+          (onClick)="confirm.emit()"/>
+      }
+      <ng-content select="[slot=additional-confirm]"></ng-content>
+    </ng-template>
+  }
+</p-dialog>

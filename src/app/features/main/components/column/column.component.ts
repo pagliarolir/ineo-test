@@ -14,7 +14,7 @@ import {InputTextModule} from "primeng/inputtext"
 import {Icons} from "@models/enums/icons.enum"
 import {RippleModule} from "primeng/ripple"
 import {OverlayPanelModule} from "primeng/overlaypanel"
-import {AddTaskOverlayComponent, AddTaskPayload} from "../add-task-overlay/add-task-overlay.component"
+import {ManageTaskComponent} from "../manage-task/manage-task.component"
 import {Tags} from "@constants/tag-list"
 import {Users} from "@constants/users"
 import {Task} from "@models/interfaces/task"
@@ -23,6 +23,8 @@ import {SortingOrderEnum} from "@models/enums/sorting-order";
 import {TypedObjectFromEnum} from "@helpers/typed-object-from-enum";
 import {SortParams} from "@models/types/sort-params";
 import {SkeletonCardComponent} from "../skeleton-card/skeleton-card.component";
+import {AddTaskPayload} from "@models/types/add-task-payload";
+import {EditTaskDialogComponent} from "../edit-task-dialog/edit-task-dialog.component";
 
 @Component({
   selector: 'it-column',
@@ -38,9 +40,10 @@ import {SkeletonCardComponent} from "../skeleton-card/skeleton-card.component";
     InputTextModule,
     RippleModule,
     OverlayPanelModule,
-    AddTaskOverlayComponent,
+    ManageTaskComponent,
     Button,
     SkeletonCardComponent,
+    EditTaskDialogComponent,
   ],
   templateUrl: './column.component.html',
   styleUrl: './column.component.scss',
@@ -61,6 +64,7 @@ export class ColumnComponent {
     order: SortingOrderEnum.NO_SORT,
     icon: Icons.SORT_ALT
   })
+  showEditTaskDialog = signal<boolean>(false)
 
   formGroup = signal(this.fb.group({
     search: this.fb.control<string>(''),
@@ -101,7 +105,8 @@ export class ColumnComponent {
   }
 
   editTask(task: Task) {
-    this.taskService.editTask(task)
+    //this.taskService.editTask(task)
+    this.showEditTaskDialog.set(true)
   }
 
   deleteTask(task: Task) {

@@ -11,7 +11,7 @@
             pInputText
           />
         </p-iconField>
-        <p-button class="contrast" [icon]="sortParams().icon" (onClick)="toggleSort()"/>
+        <p-button class="contrast bold" [icon]="sortParams().icon" (onClick)="toggleSort()"/>
       </form>
     </div>
   </ng-template>
@@ -46,11 +46,12 @@
       <span class="primary-dark bold">Aggiungi task</span>
     </div>
     <p-overlayPanel #addTaskOp>
-      <it-add-task-overlay
+      <it-manage-task
         [tags]="Tags"
         [users]="Users"
         (onCreateTask)="createTask($event); addTaskOp.toggle(true)"
       />
     </p-overlayPanel>
   </ng-template>
+  <it-edit-task-dialog [visible]="showEditTaskDialog()" [tags]="Tags" [users]="Users"/>
 </p-card>

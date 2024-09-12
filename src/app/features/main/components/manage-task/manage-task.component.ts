@@ -7,10 +7,10 @@ import {Button} from "primeng/button";
 import {TooltipModule} from "primeng/tooltip";
 import {FormBuilder, ReactiveFormsModule, Validators} from "@angular/forms";
 import {UsersFormControlComponent} from "../users-form-control/users-form-control.component";
-import {JsonPipe} from "@angular/common";
+import {AddTaskPayload} from "@models/types/add-task-payload";
 
 @Component({
-  selector: 'it-add-task-overlay',
+  selector: 'it-manage-task',
   standalone: true,
   imports: [
     SelectButtonModule,
@@ -19,12 +19,11 @@ import {JsonPipe} from "@angular/common";
     TooltipModule,
     UsersFormControlComponent,
     ReactiveFormsModule,
-    JsonPipe
   ],
-  templateUrl: './add-task-overlay.component.html',
-  styleUrl: './add-task-overlay.component.scss'
+  templateUrl: './manage-task.component.html',
+  styleUrl: './manage-task.component.scss'
 })
-export class AddTaskOverlayComponent {
+export class ManageTaskComponent {
 
   private fb = inject(FormBuilder)
   private element = inject(ElementRef)
@@ -63,5 +62,3 @@ export class AddTaskOverlayComponent {
   }
 
 }
-
-export type AddTaskPayload = { user: User | null, label: string, tags: number[] }
