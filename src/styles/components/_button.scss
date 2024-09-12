@@ -97,18 +97,21 @@ p-button {
     }
   }
 
+  &.contrast-dark {
+    .p-button, .p-button-icon-only {
+      @include set-color($white, $primary-dark, $primary-dark);
+    }
+  }
+
   &.success {
     .p-button, .p-button-icon-only {
       @include set-color($success, $white, $success);
     }
   }
 
-  &.accent-pink {
-    .p-button, .p-button-icon-only {
-      @include set-color($white, $accent-pink2 /*$bg3*/
-      , $accent-pink2);
-      font-weight: $font-weight-bolder;
-      text-shadow: $accent-pink-icon-border
+  &.no-border {
+    .p-button {
+      border: none
     }
   }
 
@@ -124,16 +127,13 @@ p-button {
   &.icon-big {
     .p-button, .p-button-icon-only {
       .pi {
-        font-weight: $font-size-big;
+        font-size: $font-size-big;
       }
     }
   }
 
   &.icon-bigger {
     .p-button, .p-button-icon-only {
-      width: $icon-size-bigger;
-      height: $icon-size-bigger;
-
       .pi {
         font-size: $icon-size-bigger
       }
@@ -227,6 +227,13 @@ p-button {
     }
   }
 
+  &.animate-scale {
+    transition: transform 250ms;
+
+    &:hover {
+      transform: scale(1.2)
+    }
+  }
 }
 
 /* Set right border for multi select */

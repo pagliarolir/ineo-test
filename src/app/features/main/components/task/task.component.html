@@ -8,7 +8,9 @@
   <img class="user-pic" [src]="getUser()?.picture">
 
   <div class="icons">
-    <p-button class="contrast border" [icon]="Icons.PENCIL" (onClick)="onEditTask.emit()"/>
-    <p-button class="contrast border" [icon]="Icons.TRASH" (onClick)="onDeleteTask.emit()"/>
+    <p-button class="contrast-dark no-border icon-bigger animate-scale" [icon]="Icons.PENCIL"
+              (onClick)="onEditTask.emit()"/>
+    <p-button class="contrast-dark no-border icon-bigger animate-scale" [icon]="Icons.TRASH"
+              (onClick)="onDeleteTask.emit()"/>
   </div>
 </div>
