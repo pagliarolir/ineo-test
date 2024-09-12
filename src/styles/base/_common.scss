@@ -69,3 +69,28 @@ span, label {
     text-align: center
   }
 }
+
+/* Tags */
+div.tag {
+  border-radius: $border-radius-default;
+
+  &.front-end {
+    background: $purple-300;
+  }
+
+  &.back-end {
+    background: $orange-300;
+  }
+
+  &.dev-ops {
+    background: $green-300;
+  }
+
+  &.qa-test {
+    background: $red-300;
+  }
+
+  &.sales {
+    background: $blue-300
+  }
+}

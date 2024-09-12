@@ -6,12 +6,22 @@
 :host {
   padding: 0.5rem;
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-rows: 10% minmax(0, 1fr) 22%;
   cursor: pointer;
-  @include flex-container(flex-start, center);
   @include border-solid($secondary-light);
-  min-height: 20%;
+  min-height: 15vh;
   gap: 0.5rem;
   border-radius: $border-radius-default;
   box-shadow: $block-box-shadow;
+
+  .tags-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    min-height: 10%;
+
+    > :nth-child(n).tag {
+      flex: 0 1 25%;
+    }
+  }
 }

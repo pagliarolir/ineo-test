@@ -1,6 +1,9 @@
-<div class="label-wrapper">
-  <span class="bold uppercase primary">{{ task().label }}</span>
+<div class="tags-wrapper">
+  @for (tag of tags(); track tag.id) {
+    <div class="tag" [class]="tag.styleClass"></div>
+  }
 </div>
+<span class="bold uppercase primary">{{ task().label }}</span>
 <div class="icons-wrapper">
   <p-button class="contrast border" [icon]="Icons.PENCIL" (onClick)="onEditTask.emit()"/>
   <p-button class="contrast border" [icon]="Icons.TRASH" (onClick)="onDeleteTask.emit()"/>

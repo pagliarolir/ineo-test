@@ -14,6 +14,7 @@
   min-width: 10rem;
   width: 100%;
 
+  /* Select button tags*/
   &.front-end {
     @include set-color($white, $purple-300, $purple-300);
   }
@@ -199,7 +200,6 @@ p-button {
       content: "\e90d";
     }
   }
-
 
   /* Button Label */
   &.uppercase {
