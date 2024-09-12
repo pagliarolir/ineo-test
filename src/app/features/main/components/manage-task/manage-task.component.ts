@@ -8,7 +8,8 @@ import {Button} from "primeng/button";
 import {TooltipModule} from "primeng/tooltip";
 import {FormBuilder, ReactiveFormsModule, Validators} from "@angular/forms";
 import {UsersFormControlComponent} from "../users-form-control/users-form-control.component";
-import {AddTaskPayload} from "@models/types/add-task-payload";
+import {ManageTaskPayload} from "@models/types/manage-task-payload";
+import {NgClass} from "@angular/common";
 
 @Component({
   selector: 'it-manage-task',
@@ -20,6 +21,7 @@ import {AddTaskPayload} from "@models/types/add-task-payload";
     TooltipModule,
     UsersFormControlComponent,
     ReactiveFormsModule,
+    NgClass,
   ],
   templateUrl: './manage-task.component.html',
   styleUrl: './manage-task.component.scss'
@@ -32,7 +34,8 @@ export class ManageTaskComponent {
   users = input<User[]>([])
   taskToEdit = input<Task>()
 
-  @Output() onCreateTask = new EventEmitter<AddTaskPayload>()
+  @Output() onCreateTask = new EventEmitter<ManageTaskPayload>()
+  @Output() onEditTask = new EventEmitter<ManageTaskPayload>()
 
   isEditMode = computed(() => !!this.taskToEdit())
   formGroup = computed(() => (this.fb.group({
@@ -51,13 +54,13 @@ export class ManageTaskComponent {
       : ''
   }
 
-  createTask() {
-    const payload: AddTaskPayload = {
+  manageTask() {
+    const payload: ManageTaskPayload = {
       label: this.labelFormControl().value!,
       user: this.userFormControl().value,
       tags: this.tagsFormControl().value!
     }
-    this.onCreateTask.emit(payload)
+    this.isEditMode() ? this.onEditTask.emit(payload) : this.onCreateTask.emit(payload)
     this.formGroup().reset()
   }
 }

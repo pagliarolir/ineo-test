@@ -3,7 +3,7 @@
 @import 'mixins/set-color';
 @import 'mixins/border-solid';
 
-.p-button:not(.p-button-icon-only) {
+.p-button:not(.p-button-icon-only, .p-dialog-header-close) {
   padding: 0.5rem;
   border-radius: $border-radius-default;
   display: flex;
@@ -150,8 +150,8 @@ p-button {
     }
   }
 
-  /* Confirm add */
-  &.confirm-add-button {
+  /*Confirm add / edit  */
+  &.confirm-edit-button, &.confirm-add-button {
     align-self: flex-end;
 
     .p-button {
@@ -166,11 +166,12 @@ p-button {
     }
 
     button:after {
-      content: "+";
+      content: "\e942";
+      font-family: 'PrimeIcons', sans-serif;
       position: absolute;
       opacity: 0;
-      font-size: 2rem;
-      top: -0.25rem;
+      font-size: $font-size-big;
+      top: 0.5rem;
       font-weight: $font-weight-lighter;
       right: -1rem;
       transition: 0.5s;
@@ -184,6 +185,18 @@ p-button {
     button:hover:after {
       opacity: 1;
       right: 1rem;
+    }
+  }
+
+  &.confirm-edit-button {
+    button:after {
+      content: "\e942";
+    }
+  }
+
+  &.confirm-add-button {
+    button:after {
+      content: "\e90d";
     }
   }
 

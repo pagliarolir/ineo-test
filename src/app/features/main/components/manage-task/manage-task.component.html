@@ -21,9 +21,10 @@
     />
   </div>
   <p-button
-    class="contrast confirm-add-button"
-    [label]="'Aggiungi'"
-    [disabled]="formGroup().invalid"
-    (onClick)="createTask()"
+    class="contrast"
+    [ngClass]="isEditMode() ? 'confirm-edit-button' : 'confirm-add-button'"
+    [label]="isEditMode() ? 'Modifica' : 'Aggiungi'"
+    [disabled]="!isEditMode() ? formGroup().invalid : (formGroup().invalid || !formGroup().dirty)"
+    (onClick)="manageTask()"
   />
 </form>

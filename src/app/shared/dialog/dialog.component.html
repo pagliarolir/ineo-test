@@ -2,8 +2,9 @@
   [closable]="true"
   [focusOnShow]="false"
   [draggable]="false"
-  [visible]="visible()"
   [style]="getStyle()"
+  [visible]="visible()"
+  (visibleChange)="close.emit()"
 >
   <ng-template pTemplate="header">
     @if (title()) {

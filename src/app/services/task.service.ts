@@ -27,11 +27,11 @@ export class TaskService {
     ).subscribe(newTask => this.#tasks.update(items => [...items, newTask]))
   }
 
-  editTask(task: Task) {
-    this.http.put<Task>(`${this._url}/${task.id}`, task).pipe(
+  editTask(payload: Task) {
+    this.http.put<Task>(`${this._url}/${payload.id}`, payload).pipe(
       catchError(() => throwError(() => ({error: 'Errore nella modifica del task'}))),
     ).subscribe(updatedTask => {
-      return this.#tasks.update(items => items.map(el => el.id === task.id ? {...updatedTask} : el));
+      return this.#tasks.update(items => items.map(el => el.id === payload.id ? {...updatedTask} : el));
     })
   }
 

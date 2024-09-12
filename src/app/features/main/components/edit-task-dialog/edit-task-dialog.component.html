@@ -5,5 +5,10 @@
   (close)="close.emit()"
   (confirm)="confirmEdit.emit()"
 >
-  <it-manage-task [users]="users()" [tags]="tags()" [taskToEdit]="task()"/>
+  <it-manage-task
+    [users]="users()"
+    [tags]="tags()"
+    [taskToEdit]="task()"
+    (onEditTask)="confirmEditTask($event)"
+  />
 </it-dialog>

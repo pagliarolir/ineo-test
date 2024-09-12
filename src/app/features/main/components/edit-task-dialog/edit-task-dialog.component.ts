@@ -6,6 +6,7 @@ import {Task} from "@models/interfaces/task";
 import {ManageTaskComponent} from "../manage-task/manage-task.component";
 import {Tag} from "@models/interfaces/tag";
 import {User} from "@models/interfaces/user";
+import {ManageTaskPayload} from "@models/types/manage-task-payload";
 
 @Component({
   selector: 'it-edit-task-dialog',
@@ -28,6 +29,10 @@ export class EditTaskDialogComponent {
   users = input<User[]>([])
 
   @Output() close = new EventEmitter<void>()
-  @Output() confirmEdit = new EventEmitter<void>()
+  @Output() confirmEdit = new EventEmitter<ManageTaskPayload>()
 
+  confirmEditTask(task: ManageTaskPayload) {
+    this.confirmEdit.emit(task)
+    this.close.emit()
+  }
 }

@@ -23,7 +23,7 @@ import {SortingOrderEnum} from "@models/enums/sorting-order";
 import {TypedObjectFromEnum} from "@helpers/typed-object-from-enum";
 import {SortParams} from "@models/types/sort-params";
 import {SkeletonCardComponent} from "../skeleton-card/skeleton-card.component";
-import {AddTaskPayload} from "@models/types/add-task-payload";
+import {ManageTaskPayload} from "@models/types/manage-task-payload";
 import {EditTaskDialogComponent} from "../edit-task-dialog/edit-task-dialog.component";
 
 @Component({
@@ -96,26 +96,6 @@ export class ColumnComponent {
     return [...filteredTasks]
   })
 
-  createTask(event: AddTaskPayload) {
-    const params: Omit<Task, 'id'> = {
-      userId: event.user?.id!,
-      column: this.column().id,
-      tags: event.tags,
-      label: event.label
-    }
-    this.taskService.addTask(params)
-  }
-
-  editTask(task: Task) {
-    //this.taskService.editTask(task)
-    this.taskToEdit.set(task)
-    this.showEditTaskDialog.set(true)
-  }
-
-  deleteTask(task: Task) {
-    this.taskService.deleteTask(task.id)
-  }
-
   /* Toggle sort method */
   toggleSort() {
     /* Build a map where the key is each SortingOrderEnum value
@@ -127,5 +107,41 @@ export class ColumnComponent {
     }
     /* Update params on toggle, assigning to the object the next key */
     this.sortParams.update(obj => sortMap[obj.order])
+  }
+
+  createTask(event: ManageTaskPayload) {
+    const body: Omit<Task, 'id'> = {
+      userId: event.user?.id!,
+      column: this.column().id,
+      tags: event.tags,
+      label: event.label
+    }
+    this.taskService.addTask(body)
+  }
+
+  openEditTaskDialog(task: Task) {
+    this.taskToEdit.set(task)
+    this.showEditTaskDialog.set(true)
+  }
+
+  editTask(event: ManageTaskPayload) {
+    const body: Task = {
+      userId: event.user?.id!,
+      tags: event.tags,
+      label: event.label,
+      column: this.column().id,
+      id: this.taskToEdit()?.id!
+    }
+    this.taskService.editTask(body)
+    this.closeEditTaskDialog()
+  }
+
+  closeEditTaskDialog() {
+    this.taskToEdit.set(null)
+    this.showEditTaskDialog.set(false)
+  }
+
+  deleteTask(task: Task) {
+    this.taskService.deleteTask(task.id)
   }
 }

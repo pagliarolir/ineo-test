@@ -15,6 +15,15 @@ p-dialog {
       padding: 1rem;
       justify-content: flex-start;
       gap: 0.5rem;
+
+      .p-dialog-header-icons {
+        margin-left: auto;
+
+        timesicon {
+          color: $primary-dark;
+          font-weight: bold;
+        }
+      }
     }
 
     .p-dialog-content {

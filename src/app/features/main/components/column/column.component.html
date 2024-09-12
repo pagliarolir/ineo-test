@@ -22,7 +22,7 @@
           <it-task
             [highlight]="true"
             [task]="task"
-            (onEditTask)="editTask(task)"
+            (onEditTask)="openEditTaskDialog(task)"
             (onDeleteTask)="deleteTask(task)"
           />
         } @empty {
@@ -58,6 +58,7 @@
     [task]="taskToEdit()!"
     [tags]="Tags"
     [users]="Users"
-    (close)="showEditTaskDialog.set(false)"
+    (confirmEdit)="editTask($event)"
+    (close)="closeEditTaskDialog()"
   />
 </p-card>
