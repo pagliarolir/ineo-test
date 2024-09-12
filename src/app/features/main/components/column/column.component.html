@@ -55,6 +55,7 @@
   </ng-template>
   <it-edit-task-dialog
     [visible]="showEditTaskDialog()"
+    [task]="taskToEdit()!"
     [tags]="Tags"
     [users]="Users"
     (close)="showEditTaskDialog.set(false)"

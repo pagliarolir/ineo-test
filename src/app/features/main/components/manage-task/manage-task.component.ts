@@ -1,7 +1,8 @@
-import {Component, computed, effect, ElementRef, EventEmitter, inject, input, Output, signal} from '@angular/core';
+import {Component, computed, EventEmitter, inject, input, Output} from '@angular/core';
 import {SelectButtonModule} from "primeng/selectbutton";
 import {Tag} from "@models/interfaces/tag";
 import {User} from "@models/interfaces/user";
+import {Task} from "@models/interfaces/task";
 import {InputTextModule} from "primeng/inputtext";
 import {Button} from "primeng/button";
 import {TooltipModule} from "primeng/tooltip";
@@ -26,24 +27,23 @@ import {AddTaskPayload} from "@models/types/add-task-payload";
 export class ManageTaskComponent {
 
   private fb = inject(FormBuilder)
-  private element = inject(ElementRef)
 
   tags = input<Tag[]>([])
   users = input<User[]>([])
+  taskToEdit = input<Task>()
 
   @Output() onCreateTask = new EventEmitter<AddTaskPayload>()
 
-  formGroup = signal(this.fb.group({
-    label: this.fb.control<string>('', Validators.required),
-    tags: this.fb.control<number[]>([], Validators.required),
-    user: this.fb.control<User | null>(null, Validators.required)
-  }))
+  isEditMode = computed(() => !!this.taskToEdit())
+  formGroup = computed(() => (this.fb.group({
+    label: this.fb.control<string>(this.isEditMode() ? this.taskToEdit()?.label! : '', Validators.required),
+    tags: this.fb.control<number[]>(this.isEditMode() ? this.taskToEdit()?.tags! : [], Validators.required),
+    user: this.fb.control<User | null>(this.isEditMode() ? this.users().find(el => el.id === this.taskToEdit()?.userId)! : null, Validators.required)
+  })))
 
   labelFormControl = computed(() => this.formGroup().controls.label)
   tagsFormControl = computed(() => this.formGroup().controls.tags)
   userFormControl = computed(() => this.formGroup().controls.user)
-
-  setUsersNumber = effect(() => this.element.nativeElement.style.setProperty('--users-no', this.users().length))
 
   getUserFullName() {
     return this.userFormControl().value
@@ -60,5 +60,4 @@ export class ManageTaskComponent {
     this.onCreateTask.emit(payload)
     this.formGroup().reset()
   }
-
 }

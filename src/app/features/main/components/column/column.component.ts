@@ -64,7 +64,9 @@ export class ColumnComponent {
     order: SortingOrderEnum.NO_SORT,
     icon: Icons.SORT_ALT
   })
+  /* Edit task variables */
   showEditTaskDialog = signal<boolean>(false)
+  taskToEdit = signal<Task | null>(null)
 
   formGroup = signal(this.fb.group({
     search: this.fb.control<string>(''),
@@ -106,6 +108,7 @@ export class ColumnComponent {
 
   editTask(task: Task) {
     //this.taskService.editTask(task)
+    this.taskToEdit.set(task)
     this.showEditTaskDialog.set(true)
   }
 

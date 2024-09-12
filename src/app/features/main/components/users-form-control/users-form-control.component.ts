@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, input, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, effect, ElementRef, inject, input, signal} from '@angular/core';
 import {User} from "@models/interfaces/user";
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 import {NgClass, NgOptimizedImage} from "@angular/common";
@@ -32,6 +32,8 @@ import {NgClass, NgOptimizedImage} from "@angular/common";
 })
 export class UsersFormControlComponent implements ControlValueAccessor {
 
+  private element = inject(ElementRef)
+  
   users = input<User[]>([])
 
   value = signal<User | null>(null)
@@ -71,8 +73,7 @@ export class UsersFormControlComponent implements ControlValueAccessor {
   }
 
   /* Check if an element has direct sibling among all the users in the array
-   * This method is only for styling purpose
-   */
+   * This method is only for styling purpose */
   isDirectSibling(user: User): boolean {
     //Return if no user is selected
     if (!this.value()?.id) return false;
@@ -91,4 +92,7 @@ export class UsersFormControlComponent implements ControlValueAccessor {
       (index < this.users().length - 1 && this.users()[index + 1].id === user.id)
     );
   }
+
+  /* Calc. users length and set correspondent css variable. This method is for styling purpose */
+  usersNumber = effect(() => this.element.nativeElement.style.setProperty('--users-no', this.users().length))
 }
