@@ -53,5 +53,10 @@
       />
     </p-overlayPanel>
   </ng-template>
-  <it-edit-task-dialog [visible]="showEditTaskDialog()" [tags]="Tags" [users]="Users"/>
+  <it-edit-task-dialog
+    [visible]="showEditTaskDialog()"
+    [tags]="Tags"
+    [users]="Users"
+    (close)="showEditTaskDialog.set(false)"
+  />
 </p-card>

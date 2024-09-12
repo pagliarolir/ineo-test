@@ -1,0 +1,11 @@
+p-selectButton {
+  .p-selectbutton {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    > :nth-child(n) {
+      flex: 0 1 calc(50% - 0.25rem);
+    }
+  }
+}

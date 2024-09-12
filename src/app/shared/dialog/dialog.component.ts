@@ -12,7 +12,6 @@ import {PrimeTemplate} from "primeng/api";
     PrimeTemplate
   ],
   templateUrl: './dialog.component.html',
-  styleUrl: './dialog.component.scss'
 })
 export class DialogComponent {
 
@@ -20,7 +19,6 @@ export class DialogComponent {
   disableConfirm = input<boolean>(false)
   hasFooter = input<boolean>(false)
   title = input<string>('')
-  titleParam = input<string>()
   width = input<number>(30)
   canConfirm = input<boolean>(true)
   canClose = input<boolean>(true)

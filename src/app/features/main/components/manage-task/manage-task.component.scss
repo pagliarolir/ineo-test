@@ -1,7 +1,7 @@
 @import "mixins/flex-container";
 
 :host {
-  min-width: 20vw;
+  width: 25vw;
   min-height: 45vh;
   @include flex-container(space-between, flex-start, column);
 

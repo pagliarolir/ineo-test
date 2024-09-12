@@ -11,6 +11,7 @@ p-dialog {
       border-top-right-radius: $border-radius-default;
       border-top-left-radius: $border-radius-default;
       background: $secondary;
+      color: $primary-dark;
       padding: 1rem;
       justify-content: flex-start;
       gap: 0.5rem;
@@ -18,7 +19,8 @@ p-dialog {
 
     .p-dialog-content {
       padding: 1rem;
-      color: $black;
+      color: $primary-dark;
+      background: $background;
     }
 
     .p-dialog-footer {
