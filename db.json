@@ -37,15 +37,15 @@
       ]
     },
     {
-      "id": 4,
-      "label": "Watch a documentary",
-      "column": 1,
       "userId": 1,
       "tags": [
-        1,
-        2,
-        5
-      ]
+        5,
+        3,
+        1
+      ],
+      "label": "Watch a documentary",
+      "column": 1,
+      "id": 4
     },
     {
       "userId": 3,
@@ -70,15 +70,15 @@
       ]
     },
     {
-      "id": 7,
-      "label": "Solve a Rubik's cube",
-      "column": 1,
-      "userId": 1,
+      "userId": 3,
       "tags": [
         1,
         2,
         5
-      ]
+      ],
+      "label": "Solve a Rubik's cube",
+      "column": 1,
+      "id": 7
     },
     {
       "id": 8,
@@ -113,15 +113,14 @@
       "id": 11
     },
     {
-      "id": 12,
-      "label": "Have a football scrimmage with some friends",
-      "column": 2,
-      "userId": 1,
+      "userId": 3,
       "tags": [
         1,
-        2,
-        3
-      ]
+        2
+      ],
+      "label": "Have a football scrimmage with some friends",
+      "column": 2,
+      "id": 12
     },
     {
       "id": 13,
@@ -135,15 +134,15 @@
       ]
     },
     {
-      "id": 14,
-      "label": "Organize pantry",
-      "column": 2,
-      "userId": 1,
+      "userId": 3,
       "tags": [
         1,
         2,
-        3
-      ]
+        4
+      ],
+      "label": "Organize pantries",
+      "column": 2,
+      "id": 14
     },
     {
       "id": 15,

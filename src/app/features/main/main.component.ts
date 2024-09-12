@@ -14,14 +14,18 @@ import {TaskService} from "@services/task.service";
       <it-column [column]="column"/>
     }
   `,
-  styles:
-    `
-      :host {
-        padding: 1rem;
-        height: 100%;
-        display: flex;
-        gap: 1rem;
-      }`
+  styles: `:host {
+    padding: 1rem;
+    height: 100%;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+
+    @media (min-width: 1280px) {
+      grid-auto-flow: column;
+    }
+  }`
 })
 export class MainComponent implements OnInit {
 

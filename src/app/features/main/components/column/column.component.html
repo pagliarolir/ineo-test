@@ -16,7 +16,7 @@
     </div>
   </ng-template>
   <ng-template pTemplate="body">
-    @defer (on timer(2000)) {
+    @defer (when tasks().length) {
       <div class="tasks-list">
         @for (task of computedTasks(); track task.id) {
           <it-task
@@ -39,19 +39,21 @@
     }
   </ng-template>
   <ng-template pTemplate="footer">
-    <div class="add-task ripple"
-         pRipple
-         (click)="addTaskOp.toggle($event)">
-      <i [class]="Icons.PLUS" class="primary-dark border"></i>
-      <span class="primary-dark bold">Aggiungi task</span>
-    </div>
-    <p-overlayPanel #addTaskOp>
-      <it-manage-task
-        [tags]="Tags"
-        [users]="Users"
-        (onCreateTask)="createTask($event); addTaskOp.toggle(true)"
-      />
-    </p-overlayPanel>
+    @defer (when tasks().length) {
+      <div class="add-task ripple"
+           pRipple
+           (click)="addTaskOp.toggle($event)">
+        <i [class]="Icons.PLUS" class="primary-dark border"></i>
+        <span class="primary-dark bold">Aggiungi task</span>
+      </div>
+      <p-overlayPanel #addTaskOp>
+        <it-manage-task
+          [tags]="Tags"
+          [users]="Users"
+          (onCreateTask)="createTask($event); addTaskOp.toggle(true)"
+        />
+      </p-overlayPanel>
+    }
   </ng-template>
   <it-edit-task-dialog
     [visible]="showEditTaskDialog()"

@@ -1,7 +1,7 @@
 import {inject, Injectable, signal} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "@environments/environment.development";
-import {catchError, throwError} from "rxjs";
+import {catchError, delay, of, throwError} from "rxjs";
 import {Task} from "@models/interfaces/task";
 
 @Injectable({
@@ -15,9 +15,13 @@ export class TaskService {
   tasks = this.#tasks.asReadonly()
 
   getAllTasks() {
-    this.http.get<Task[]>(this._url,).pipe(
-      catchError(() => throwError(() => ({error: 'Errore nel caricamento dei task'})))
-    ).subscribe(tasks => this.#tasks.set(tasks))
+    this.http.get<Task[]>(this._url).pipe(
+      delay(2000),
+      catchError(() => {
+        throwError(() => ({error: 'Errore nel caricamento dei task'}))
+        return of([])
+      })
+    ).subscribe(tasks => this.#tasks.set([...tasks]))
   }
 
 
