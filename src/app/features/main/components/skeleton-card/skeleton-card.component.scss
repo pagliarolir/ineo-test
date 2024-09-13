@@ -1,8 +1,35 @@
 @import 'variables';
+@import 'colors';
+@import 'mixins/border-solid';
+@import 'mixins/flex-container';
 
 :host {
+  padding: 0.5rem;
   width: 100%;
-  min-height: 15vh;
+  flex: 0;
+  display: grid;
+  min-height: 15%;
+  grid-template-rows: 10% minmax(0, 1fr) 45%;
+  @include border-solid($secondary-light);
+  gap: 0.5rem;
   border-radius: $border-radius-default;
   box-shadow: $block-box-shadow;
+
+  .tags-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    min-height: 10%;
+
+    > :nth-child(n).tag {
+      flex: 0 1 25%;
+    }
+  }
+
+  .task-label {
+    align-self: center;
+  }
+
+  .bottom {
+    height: 100%;
+  }
 }
