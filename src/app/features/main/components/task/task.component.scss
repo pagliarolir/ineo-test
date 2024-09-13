@@ -6,8 +6,9 @@
 :host {
   padding: 0.5rem;
   width: 100%;
+  flex: 0;
   display: grid;
-  grid-template-rows: 10% minmax(0, 1fr) 2rem;
+  grid-template-rows: 10% minmax(0, 1fr) 45%;
   cursor: pointer;
   @include border-solid($secondary-light);
   gap: 0.5rem;
@@ -23,7 +24,7 @@
     > :nth-child(n).tag {
       flex: 0 1 25%;
 
-      .label {
+      .tag-label {
         height: 100%;
         color: $white;
         font-size: $font-size-small;
@@ -38,16 +39,34 @@
     }
   }
 
-  .bottom {
-    position: relative;
+  .task-label {
+    align-self: center;
+  }
 
-    .user-pic {
-      width: 15%;
-      aspect-ratio: 1 / 1;
-      object-fit: contain;
-      border-radius: $border-radius-round;
-      position: absolute;
-      bottom: 0;
+  .bottom {
+    @include flex-container(space-between, end);
+
+    .user-pic-container {
+      flex: 1;
+      height: 100%;
+      position: relative;
+
+      .user-pic {
+        height: 100%;
+        object-fit: contain;
+        border-radius: $border-radius-round;
+      }
+
+      .user-name {
+        opacity: 0;
+        font-size: $font-size-medium;
+
+        &.ng-star-inserted {
+          opacity: 1;
+          position: absolute;
+          bottom: -0.25rem;
+        }
+      }
     }
 
     .icons {

@@ -55,6 +55,8 @@ export class TaskComponent {
     this.isExpanded.update(expanded => !expanded)
   }
 
+  getUserLabel = computed(() => `${this.getUser()?.firstName.slice(0, 1).toUpperCase()}. ${this.getUser()?.lastName}`)
+
   @HostBinding('style') get getExpandedStyle() {
     const vh = this.isExpanded() ? '25vh' : '15vh';
     return ({minHeight: vh})

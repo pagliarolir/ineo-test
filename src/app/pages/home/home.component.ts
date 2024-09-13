@@ -8,10 +8,6 @@ import {MainComponent} from "../../features/main/main.component";
   imports: [MainComponent],
   template: `
     <it-main/>`,
-  styles: `
-    :host {
-      height: 100%;
-    }`
 })
 export class HomeComponent {
 

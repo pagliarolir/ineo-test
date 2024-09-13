@@ -8,8 +8,8 @@
     @include flex-container(flex-start, flex-start, column);
     gap: 1rem;
     height: 100%;
-    padding: 1rem;
-    overflow: scroll;
+    padding: 0.5rem;
+    overflow-y: auto;
   }
 
   .skeleton-list {
@@ -35,3 +35,4 @@
     box-shadow: $block-box-shadow;
   }
 }
+

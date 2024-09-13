@@ -1,4 +1,4 @@
-import {Component, computed, EventEmitter, inject, input, Output} from '@angular/core';
+import {Component, computed, EventEmitter, HostBinding, inject, input, Output} from '@angular/core';
 import {SelectButtonModule} from "primeng/selectbutton";
 import {Tag} from "@models/interfaces/tag";
 import {User} from "@models/interfaces/user";
@@ -63,4 +63,10 @@ export class ManageTaskComponent {
     this.isEditMode() ? this.onEditTask.emit(payload) : this.onCreateTask.emit(payload)
     this.formGroup().reset()
   }
+
+  @HostBinding('style.width')
+  get minWidthValue() {
+    return `${this.isEditMode() ? '100%' : '25vw'}`
+  }
+
 }

@@ -1,10 +1,12 @@
 @import "colors";
 @import "variables";
+@import "mixins/border-solid";
 
 .p-overlaypanel {
-  background: navajowhite;
+  background: $background;
   border-radius: $border-radius-default;
-  box-shadow: $block-box-shadow;
+  box-shadow: $big-box-shadow;
+  @include border-solid($primary);
 
   &::before, &::after {
     display: none;

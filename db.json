@@ -10,7 +10,11 @@
     },
     {
       "id": 3,
-      "label": "Terminate"
+      "label": "In revisione"
+    },
+    {
+      "id": 4,
+      "label": "Completate"
     }
   ],
   "tasks": [
@@ -120,7 +124,7 @@
       "tags": [
         1,
         3,
-        4
+        2
       ],
       "label": "Have a football scrimmage with some friends",
       "column": 2,
@@ -141,11 +145,11 @@
       "userId": 3,
       "tags": [
         1,
-        2,
-        4
+        4,
+        3
       ],
       "label": "Organize pantries",
-      "column": 2,
+      "column": 4,
       "id": 14
     },
     {
@@ -182,20 +186,20 @@
       ]
     },
     {
-      "id": 18,
+      "userId": 1,
+      "tags": [
+        2,
+        3,
+        4
+      ],
       "label": "Draw and color a Mandala",
       "column": 1,
-      "userId": 2,
-      "tags": [
-        1,
-        2,
-        3
-      ]
+      "id": 18
     },
     {
       "id": 19,
       "label": "Create a cookbook with favorite recipes",
-      "column": 1,
+      "column": 4,
       "userId": 2,
       "tags": [
         1,
@@ -239,7 +243,7 @@
     {
       "id": 23,
       "label": "Take a class at local community center that interests you",
-      "column": 3,
+      "column": 4,
       "userId": 2,
       "tags": [
         1,
@@ -250,7 +254,7 @@
     {
       "id": 24,
       "label": "Research a topic interested in",
-      "column": 3,
+      "column": 4,
       "userId": 2,
       "tags": [
         2,
@@ -290,7 +294,7 @@
     {
       "id": 29,
       "label": "Have a photo session with some friends",
-      "column": 3,
+      "column": 2,
       "userId": 3,
       "tags": [
         2,
@@ -311,7 +315,7 @@
     },
     {
       "userId": 2,
-      "column": 3,
+      "column": 4,
       "tags": [
         2
       ],
@@ -320,7 +324,7 @@
     },
     {
       "userId": 3,
-      "column": 2,
+      "column": 4,
       "tags": [
         1,
         4,
