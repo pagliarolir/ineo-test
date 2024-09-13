@@ -53,7 +53,7 @@ export class ColumnComponent {
 
   private fb = inject(FormBuilder)
   private destroyRef = inject(DestroyRef)
-  private taskService = inject(TaskService)
+  protected taskService = inject(TaskService)
   Icons = Icons
   Tags = Tags
   Users = Users
@@ -64,6 +64,7 @@ export class ColumnComponent {
     order: SortingOrderEnum.NO_SORT,
     icon: Icons.SORT_ALT
   })
+
   /* Edit task variables */
   showEditTaskDialog = signal<boolean>(false)
   taskToEdit = signal<Task | null>(null)
@@ -95,6 +96,8 @@ export class ColumnComponent {
     /* If there's no sorting order, return only filtered tasks array */
     return [...filteredTasks]
   })
+
+  skeletonCardsNo = signal<number[]>(Array.from({length: Math.floor(Math.random() * 4) + 3}, () => Math.floor(Math.random() * 100)))
 
   /* Toggle sort method */
   toggleSort() {

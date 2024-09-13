@@ -16,7 +16,7 @@
     </div>
   </ng-template>
   <ng-template pTemplate="body">
-    @defer (when tasks().length) {
+    @defer (when !taskService.isLoadingGetAllTasks()) {
       <div class="tasks-list">
         @for (task of computedTasks(); track task.id) {
           <it-task
@@ -31,10 +31,9 @@
       </div>
     } @placeholder {
       <div class="skeleton-list">
-        <it-skeleton-card/>
-        <it-skeleton-card/>
-        <it-skeleton-card/>
-        <it-skeleton-card/>
+        @for (tossCoin of skeletonCardsNo(); track tossCoin) {
+          <it-skeleton-card/>
+        }
       </div>
     }
   </ng-template>
