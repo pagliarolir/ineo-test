@@ -97,7 +97,7 @@ export class ColumnComponent {
     return [...filteredTasks]
   })
 
-  skeletonCardsNo = signal<number[]>(Array.from({length: Math.floor(Math.random() * 4) + 3}, () => Math.floor(Math.random() * 100)))
+  skeletonCardsNo = signal<number[]>(Array.from(new Set(Array.from({length: Math.floor(Math.random() * 3) + 2}, () => Math.floor(Math.random() * 100)))))
 
   /* Toggle sort method */
   toggleSort() {

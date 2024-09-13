@@ -12,7 +12,10 @@
   <div class="user-pic-container">
     <img alt="" class="user-pic" [src]="getUser()?.picture">
     @if (isExpanded()) {
-      <span @fadeInOut class="user-name primary bold uppercase">{{ getUserLabel() }}</span>
+      <div @fadeInOut class="user-info">
+        <span class="primary bold uppercase">{{ getUserLabel() }}</span>
+        <span class="primary bold uppercase">{{ getUser()?.role }}</span>
+      </div>
     }
   </div>
 
