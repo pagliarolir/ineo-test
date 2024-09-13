@@ -27,7 +27,7 @@
       .tag-label {
         height: 100%;
         color: $white;
-        font-size: $font-size-small;
+        font-size: $font-size-smaller;
         transition: opacity $cubic-bezier-transition;
         @include flex-container(center, center);
         opacity: 0;
