@@ -5,6 +5,8 @@ import {toSignal} from "@angular/core/rxjs-interop";
 import {TaskService} from "@services/task.service";
 import {CardModule} from "primeng/card";
 import {DragDropModule} from "primeng/dragdrop";
+import {ToastService} from "@shared/toast/toast.service";
+import {ToastSeverity} from "@constants/toast-severity";
 
 @Component({
   selector: 'it-main',
@@ -33,6 +35,8 @@ export class MainComponent implements OnInit {
 
   private taskService = inject(TaskService)
   private columnService = inject(ColumnsService)
+  private toastService = inject(ToastService)
+
   columns = toSignal(this.columnService.getAllColumns())
   dragDropTask = this.taskService.dragDropTask
 
@@ -42,8 +46,12 @@ export class MainComponent implements OnInit {
 
   /* When a drop event occurs, trigger edit task's column */
   onDropTask(columnId: number) {
-    if (this.dragDropTask()) {
-      this.taskService.editTaskColumn(this.dragDropTask()!, columnId)
+    if (!this.dragDropTask()) return
+
+    if (columnId === this.dragDropTask()?.column) {
+      this.toastService.showToast(ToastSeverity.WARNING, 'Il task si trova già in questa colonna...')
+      return
     }
+    this.taskService.editTaskColumn(this.dragDropTask()!, columnId)
   }
 }

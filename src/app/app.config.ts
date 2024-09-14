@@ -21,5 +21,6 @@ export const appConfig = {
       useFactory: initializeAppFactory,
       deps: [PrimeNGConfig],
       multi: true,
-    },]
+    },
+  ]
 };

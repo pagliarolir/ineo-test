@@ -219,15 +219,15 @@
       ]
     },
     {
-      "id": 21,
-      "label": "Create a compost pile",
-      "column": 2,
       "userId": 2,
       "tags": [
         1,
         4,
         5
-      ]
+      ],
+      "label": "Create a compost pile battery",
+      "column": 2,
+      "id": 21
     },
     {
       "id": 22,

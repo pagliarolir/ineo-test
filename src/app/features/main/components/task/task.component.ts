@@ -53,7 +53,6 @@ export class TaskComponent {
   task = input.required<Task>()
   tags = computed(() => Tags.filter(tag => this.task().tags.includes(tag.id)))
   getUser = computed(() => Users.find(el => el.id === this.task().userId))
-  showDeleteTaskDialog = signal<boolean>(false)
   isExpanded = signal<boolean>(false)
   Icons = Icons;
 

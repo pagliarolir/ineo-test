@@ -1,0 +1,44 @@
+@import "variables";
+
+
+:host {
+  z-index: $z-index-max;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 2rem;
+  display: inline-flex;
+  min-width: 16rem;
+  min-height: 5rem;
+  max-height: 5rem;
+  box-shadow: $toast-box-shadow;
+  background: $white;
+
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  border-left: 6px solid black;
+  padding: 1.5rem;
+  border-radius: $border-radius-default;
+  font-size: $font-size-small;
+  transform: translateY(-200%);
+  transition: transform 400ms ease-in-out, opacity 200ms ease-in-out;
+  opacity: 0;
+
+  &.is-open {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+
+  &.success-toast {
+    border-left: 6px solid $success;
+  }
+
+  &.warning-toast {
+    border-left: 6px solid $warning;
+  }
+
+  &.alert-toast {
+    border-left: 6px solid $alert;
+  }
+}
