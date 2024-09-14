@@ -31,15 +31,17 @@
       "id": 1
     },
     {
-      "id": 3,
-      "label": "Watch a classic movie",
-      "column": 3,
       "userId": 1,
       "tags": [
         1,
         2,
-        5
-      ]
+        5,
+        3,
+        4
+      ],
+      "label": "Watch a classic movie",
+      "column": 3,
+      "id": 3
     },
     {
       "userId": 1,
@@ -68,7 +70,8 @@
       "tags": [
         1,
         4,
-        3
+        5,
+        2
       ],
       "label": "Contribute code or a monetary donation to an open-source software project",
       "column": 3,
@@ -299,7 +302,7 @@
       ]
     },
     {
-      "userId": 1,
+      "userId": 3,
       "tags": [
         3,
         4,
