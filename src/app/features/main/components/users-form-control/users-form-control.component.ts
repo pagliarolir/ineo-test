@@ -15,9 +15,10 @@ import {NgClass, NgOptimizedImage} from "@angular/common";
       @for (user of users(); track user.id) {
         <img class="avatar"
              alt=""
-             [ngClass]="{'selected': this.value()?.id === user.id, 'sibling': this.isDirectSibling(user)}"
              [src]="user.picture"
-             (click)="setValue(user)"
+             [ngClass]="{'selected': $index === selectedUserIndex()}"
+             [style.z-index]="getZIndex($index)"
+             (click)="setValue(user, $index)"
         />
       }
     </div>
@@ -61,38 +62,36 @@ export class UsersFormControlComponent implements ControlValueAccessor {
     this.value.set({...obj})
   }
 
-  setValue(user: User) {
+  setValue(user: User, index: number) {
     if (this.disabled()) {
       return
     }
     this.value.set(user)
     if (this.value()) {
       this.onChange(this.value()!)
+      // This
+      this.selectedUserIndex.set(index);
     }
     this.onTouched()
   }
 
-  /* Check if an element has direct sibling among all the users in the array
-   * This method is only for styling purpose */
-  isDirectSibling(user: User): boolean {
-    //Return if no user is selected
-    if (!this.value()?.id) return false;
-    //Find selected user's ID in the array
-    const index = this.users().indexOf(user);
-    return (
-      /* Check if it has a previous sibling.
-       * index > 0 implies it's not the first element in the array
-       * Then check if the past user the provided user
-       */
-      (index > 0 && this.users()[index - 1].id === user.id) ||
-      /* Check if it has a next sibling.
-       * index this.users().length - 1 implies it's not the last element in the array
-       * Then check if the next user the provided user
-       */
-      (index < this.users().length - 1 && this.users()[index + 1].id === user.id)
-    );
-  }
 
-  /* Calc. users length and set correspondent css variable. This method is for styling purpose */
+  /* Calc. users length and set correspondent css variable. This is for styling purpose */
   usersNumber = effect(() => this.element.nativeElement.style.setProperty('--users-no', this.users().length))
+
+  selectedUserIndex = signal<number | null>(null)
+
+  /* Calc z-index to be assigned to users based on users number.
+   * This method is only for styling purpose
+   * */
+  getZIndex(index: number): number {
+    const maxZIndex = this.users().length;
+
+    if (this.selectedUserIndex() === null) {
+      return maxZIndex - index; // Z-index decreases according to position
+    }
+
+    const distanceFromSelected = Math.abs(index - this.selectedUserIndex()!);
+    return Math.max(1, maxZIndex - distanceFromSelected);
+  }
 }

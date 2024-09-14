@@ -121,7 +121,7 @@
       "id": 11
     },
     {
-      "userId": 3,
+      "userId": 2,
       "tags": [
         3,
         2
@@ -305,10 +305,10 @@
     {
       "userId": 3,
       "tags": [
-        3,
         4,
         1,
-        5
+        5,
+        2
       ],
       "label": "Go to the gym",
       "column": 3,
@@ -316,7 +316,7 @@
     },
     {
       "userId": 2,
-      "column": 3,
+      "column": 2,
       "tags": [
         2
       ],

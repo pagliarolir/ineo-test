@@ -34,7 +34,7 @@ export class MainComponent implements OnInit {
   private taskService = inject(TaskService)
   private columnService = inject(ColumnsService)
   columns = toSignal(this.columnService.getAllColumns())
-  taskToDrop = this.taskService.dragDropTask
+  dragDropTask = this.taskService.dragDropTask
 
   ngOnInit() {
     this.taskService.getAllTasks()
@@ -42,8 +42,8 @@ export class MainComponent implements OnInit {
 
   /* When a drop event occurs, trigger edit task's column */
   onDropTask(columnId: number) {
-    if (this.taskToDrop()) {
-      this.taskService.editTaskColumn(this.taskToDrop()!, columnId)
+    if (this.dragDropTask()) {
+      this.taskService.editTaskColumn(this.dragDropTask()!, columnId)
     }
   }
 }

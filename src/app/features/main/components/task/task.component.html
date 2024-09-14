@@ -14,7 +14,7 @@
     @if (isExpanded()) {
       <div @fadeInOut class="user-info">
         <span class="primary bold uppercase">{{ getUserLabel() }}</span>
-        <span class="primary bold uppercase">{{ getUser()?.role }}</span>
+        <span class="primary bold uppercase small">{{ getUser()?.role }}</span>
       </div>
     }
   </div>

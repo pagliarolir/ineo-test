@@ -38,17 +38,9 @@
 
       &.selected {
         border-color: $primary;
-        z-index: $z-index-high;
         scale: 1.25
       }
 
-      &.sibling {
-        z-index: $z-index-medium;
-      }
-
-      &:not(.sibling, .selected) {
-        z-index: 1;
-      }
 
       // Only apply it if browser supports it
       @supports selector(:has(+ *)) {
