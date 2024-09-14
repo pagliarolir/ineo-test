@@ -21,7 +21,7 @@ import {DragDropModule} from "primeng/dragdrop";
     }
   `,
   styles: `:host {
-    padding: 0.75rem;
+    padding: 1rem;
     height: 100%;
     gap: 1rem;
     display: grid;
@@ -40,6 +40,7 @@ export class MainComponent implements OnInit {
     this.taskService.getAllTasks()
   }
 
+  /* When a drop event occurs, trigger edit task's column */
   onDropTask(columnId: number) {
     if (this.taskToDrop()) {
       this.taskService.editTaskColumn(this.taskToDrop()!, columnId)
