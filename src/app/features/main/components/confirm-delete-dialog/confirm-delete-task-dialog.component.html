@@ -1,0 +1,16 @@
+<it-dialog
+  [title]="'Conferma cancellazione'"
+  [visible]="visible()"
+  (close)="close.emit()"
+  (confirm)="confirmDelete.emit()"
+>
+  <div class="dialog-content">
+    <span class="primary-dark bold">Vuoi veramente cancellare questo task?</span>
+
+    <p-button
+      class="contrast confirm-delete-button"
+      [label]="'Elimina'"
+      (onClick)="confirmDelete.emit()"
+    />
+  </div>
+</it-dialog>

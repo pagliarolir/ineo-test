@@ -7,6 +7,6 @@
   height: 100%;
   width: 100%;
   @include flex-container(center, center, column);
-  background: $secondary;
+  background: $white;
   border-radius: $border-radius-default;
 }

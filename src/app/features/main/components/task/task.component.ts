@@ -15,6 +15,10 @@ import {Icons} from "@models/enums/icons.enum";
 import {Tags} from "@constants/tag-list";
 import {Users} from "@constants/users";
 import {animate, style, transition, trigger} from "@angular/animations";
+import {ManageTaskComponent} from "../manage-task/manage-task.component";
+import {OverlayPanelModule} from "primeng/overlaypanel";
+import {ConfirmDeleteDialogComponent} from "../confirm-delete-dialog/confirm-delete-dialog.component";
+import {EditTaskDialogComponent} from "../edit-task-dialog/edit-task-dialog.component";
 
 const transitionValue = '400ms cubic-bezier(0.86, 0, 0.07, 1)'
 
@@ -24,6 +28,10 @@ const transitionValue = '400ms cubic-bezier(0.86, 0, 0.07, 1)'
   imports: [
     HighlightDirective,
     Button,
+    ManageTaskComponent,
+    OverlayPanelModule,
+    ConfirmDeleteDialogComponent,
+    EditTaskDialogComponent,
   ],
   animations: [
     trigger('fadeInOut', [
@@ -45,6 +53,7 @@ export class TaskComponent {
   task = input.required<Task>()
   tags = computed(() => Tags.filter(tag => this.task().tags.includes(tag.id)))
   getUser = computed(() => Users.find(el => el.id === this.task().userId))
+  showDeleteTaskDialog = signal<boolean>(false)
   isExpanded = signal<boolean>(false)
   Icons = Icons;
 
@@ -61,6 +70,4 @@ export class TaskComponent {
     const vh = this.isExpanded() ? '25vh' : '15vh';
     return ({minHeight: vh})
   }
-
-  protected readonly isFinite = isFinite;
 }

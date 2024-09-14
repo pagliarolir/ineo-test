@@ -1,4 +1,13 @@
-import {Component, computed, EventEmitter, HostBinding, inject, input, Output} from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  EventEmitter,
+  HostBinding,
+  inject,
+  input,
+  Output
+} from '@angular/core';
 import {SelectButtonModule} from "primeng/selectbutton";
 import {Tag} from "@models/interfaces/tag";
 import {User} from "@models/interfaces/user";
@@ -24,7 +33,8 @@ import {NgClass} from "@angular/common";
     NgClass,
   ],
   templateUrl: './manage-task.component.html',
-  styleUrl: './manage-task.component.scss'
+  styleUrl: './manage-task.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ManageTaskComponent {
 

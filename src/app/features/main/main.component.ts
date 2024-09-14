@@ -21,7 +21,7 @@ import {DragDropModule} from "primeng/dragdrop";
     }
   `,
   styles: `:host {
-    padding: 1rem;
+    padding: 0.75rem;
     height: 100%;
     gap: 1rem;
     display: grid;
@@ -34,7 +34,7 @@ export class MainComponent implements OnInit {
   private taskService = inject(TaskService)
   private columnService = inject(ColumnsService)
   columns = toSignal(this.columnService.getAllColumns())
-  taskToDrop = this.taskService.taskToDrop
+  taskToDrop = this.taskService.dragDropTask
 
   ngOnInit() {
     this.taskService.getAllTasks()

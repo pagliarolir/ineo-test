@@ -152,7 +152,7 @@ p-button {
   }
 
   /*Confirm add / edit  */
-  &.confirm-edit-button, &.confirm-add-button {
+  &.confirm-edit-button, &.confirm-add-button, &.confirm-delete-button {
     align-self: flex-end;
 
     .p-button {
@@ -198,6 +198,12 @@ p-button {
   &.confirm-add-button {
     button:after {
       content: "\e90d";
+    }
+  }
+
+  &.confirm-delete-button {
+    button:after {
+      content: "\e93d";
     }
   }
 

@@ -26,7 +26,7 @@
             dragEffect="copy"
             (onDragStart)="dragStart(task)"
             (onEditTask)="openEditTaskDialog(task)"
-            (onDeleteTask)="deleteTask(task)"
+            (onDeleteTask)="openDeleteTaskDialog(task)"
           />
         } @empty {
           <it-no-data-box [label]="'Nessun task disponibile'"/>
@@ -64,5 +64,10 @@
     [users]="Users"
     (confirmEdit)="editTask($event)"
     (close)="closeEditTaskDialog()"
+  />
+  <it-delete-task-dialog
+    [visible]="showDeleteTaskDialog()"
+    (close)="closeDeleteTaskDialog()"
+    (confirmDelete)="deleteTask()"
   />
 </p-card>

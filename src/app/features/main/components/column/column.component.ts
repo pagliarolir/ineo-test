@@ -26,6 +26,7 @@ import {SkeletonCardComponent} from "../skeleton-card/skeleton-card.component";
 import {ManageTaskPayload} from "@models/types/manage-task-payload";
 import {EditTaskDialogComponent} from "../edit-task-dialog/edit-task-dialog.component";
 import {DragDropModule} from "primeng/dragdrop";
+import {ConfirmDeleteDialogComponent} from "../confirm-delete-dialog/confirm-delete-dialog.component";
 
 @Component({
   selector: 'it-column',
@@ -46,6 +47,7 @@ import {DragDropModule} from "primeng/dragdrop";
     SkeletonCardComponent,
     EditTaskDialogComponent,
     DragDropModule,
+    ConfirmDeleteDialogComponent,
   ],
   templateUrl: './column.component.html',
   styleUrl: './column.component.scss',
@@ -67,12 +69,15 @@ export class ColumnComponent {
     icon: Icons.SORT_ALT
   })
 
-  /* Edit task variables */
+  /* Edit / delete task variables */
   showEditTaskDialog = signal<boolean>(false)
   taskToEdit = signal<Task | null>(null)
 
+  showDeleteTaskDialog = signal<boolean>(false)
+  taskToDelete = signal<Task | null>(null)
+
   /* Drag Task variables */
-  taskToDrag = this.taskService.taskToDrop
+  dragDropTask = this.taskService.dragDropTask
 
   formGroup = signal(this.fb.group({
     search: this.fb.control<string>(''),
@@ -102,6 +107,8 @@ export class ColumnComponent {
     return [...filteredTasks]
   })
 
+
+  /* Generate a random elements array in order to display skeleton card randomly */
   skeletonCardsNo = signal<number[]>(Array.from(new Set(Array.from({length: Math.floor(Math.random() * 3) + 2}, () => Math.floor(Math.random() * 100)))))
 
   /* Toggle sort method */
@@ -149,11 +156,24 @@ export class ColumnComponent {
     this.showEditTaskDialog.set(false)
   }
 
-  deleteTask(task: Task) {
-    this.taskService.deleteTask(task.id)
+  openDeleteTaskDialog(task: Task) {
+    this.taskToDelete.set(task)
+    this.showDeleteTaskDialog.set(true)
+  }
+
+  deleteTask() {
+    if (this.taskToDelete()) {
+      this.taskService.deleteTask(this.taskToDelete()?.id!)
+    }
+    this.closeDeleteTaskDialog()
+  }
+
+  closeDeleteTaskDialog() {
+    this.taskToDelete.set(null)
+    this.showDeleteTaskDialog.set(false)
   }
 
   dragStart(task: Task) {
-    this.taskToDrag.set({...task})
+    this.dragDropTask.set({...task})
   }
 }
