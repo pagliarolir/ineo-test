@@ -29,7 +29,7 @@
     @include flex-container(center, center);
     gap: 0.5rem;
     padding: 0.5rem;
-    background: white;
+    background: $white;
     color: $primary-dark;
     border: 2px solid $primary-dark;
     box-shadow: $block-box-shadow;

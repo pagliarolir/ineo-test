@@ -41,6 +41,11 @@
 
   .task-label {
     align-self: center;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    --webkit-line-clamp: 2;
   }
 
   .bottom {
@@ -55,6 +60,7 @@
         height: 100%;
         object-fit: contain;
         border-radius: $border-radius-round;
+        @include border-solid($primary, 3px)
       }
 
       .user-info {

@@ -61,4 +61,6 @@ export class TaskComponent {
     const vh = this.isExpanded() ? '25vh' : '15vh';
     return ({minHeight: vh})
   }
+
+  protected readonly isFinite = isFinite;
 }

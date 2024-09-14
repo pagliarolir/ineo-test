@@ -18,7 +18,6 @@ import {ManageTaskPayload} from "@models/types/manage-task-payload";
     ManageTaskComponent
   ],
   templateUrl: './edit-task-dialog.component.html',
-  styleUrl: './edit-task-dialog.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EditTaskDialogComponent {

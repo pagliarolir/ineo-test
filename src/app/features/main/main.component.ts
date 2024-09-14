@@ -17,8 +17,10 @@ import {TaskService} from "@services/task.service";
   styles: `:host {
     padding: 1rem;
     height: 100%;
-    display: flex;
     gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 1fr);
   }`
 })
 export class MainComponent implements OnInit {
