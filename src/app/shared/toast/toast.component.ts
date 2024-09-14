@@ -5,10 +5,7 @@ import {ToastService} from "@shared/toast/toast.service";
   selector: 'it-toast',
   standalone: true,
   imports: [],
-  template: `
-    <div [style.max-width.rem]="10">
-      {{ toastMessage() }}
-    </div>`,
+  template: `{{ toastMessage() }}`,
   styleUrl: './toast.component.scss',
 })
 export class ToastComponent {

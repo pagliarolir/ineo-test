@@ -1,8 +1,13 @@
 :root {
-  --alert: #ff3a29;
-  --alert-light: #f4bfba;
+  --alert: #FF4C4C;
+  --alert-light: #FDE8E8;
+  --alert-contrast: #C70039;
   --warning: #ffc102;
+  --warning-light: #FFF4B8;
+  --warning-contrast: #C7A900;
   --success: #06d186;
+  --success-light: #E3F9F0;
+  --success-contrast: #04A25C;
   --white: #fafafa;
   --black: #000000;
 
@@ -45,10 +50,15 @@ $secondary-light: var(--secondary-light);
 $secondary-light2: var(--secondary-light2);
 $alert: var(--alert);
 $alert-light: var(--alert-light);
+$alert-contrast: var(--alert-contrast);
 $bg1: var(--bg2);
 $bg2: var(--bg3);
 $warning: var(--warning);
+$warning-light: var(--warning-light);
+$warning-contrast: var(--warning-contrast);
 $success: var(--success);
+$success-light: var(--success-light);
+$success-contrast: var(--success-contrast);
 $white: var(--white);
 $black: var(--black);
 

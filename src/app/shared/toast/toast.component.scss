@@ -2,28 +2,25 @@
 
 
 :host {
-  z-index: $z-index-max;
+  z-index: 1001;
   position: absolute;
   top: 0;
   right: 0;
   margin: 2rem;
   display: inline-flex;
-  min-width: 16rem;
-  min-height: 5rem;
-  max-height: 5rem;
+  width: 24rem;
+  height: 8rem;
   box-shadow: $toast-box-shadow;
   background: $white;
-
-  flex-flow: row nowrap;
   align-items: center;
-  justify-content: space-between;
   border-left: 6px solid black;
   padding: 1.5rem;
-  border-radius: $border-radius-default;
-  font-size: $font-size-small;
+  border-radius: 0.5rem;
+  font-size: $font-size-medium;
   transform: translateY(-200%);
   transition: transform 400ms ease-in-out, opacity 200ms ease-in-out;
   opacity: 0;
+  font-weight: $font-weight-bold;
 
   &.is-open {
     transform: translateY(0%);
@@ -32,13 +29,19 @@
 
   &.success-toast {
     border-left: 6px solid $success;
+    background: $success-light;
+    color: $success-contrast;
   }
 
   &.warning-toast {
     border-left: 6px solid $warning;
+    background: $warning-light;
+    color: $warning-contrast;
   }
 
   &.alert-toast {
     border-left: 6px solid $alert;
+    background: $alert-light;
+    color: $alert-contrast;
   }
 }

@@ -23,9 +23,8 @@ export class ToastService {
     this.toastMessage.set(toastMsg);
 
     this.isToastOpen.set(true);
-
     timer(4000).pipe(
-      take(1)) /* After first value, complete observable and unsubscribe */
+      take(1)) /* After first value, complete observable and avoid memory leaks */
       .subscribe(() => this.dismissToast());
   }
 
