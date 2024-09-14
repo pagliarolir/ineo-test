@@ -25,6 +25,7 @@ import {SortParams} from "@models/types/sort-params";
 import {SkeletonCardComponent} from "../skeleton-card/skeleton-card.component";
 import {ManageTaskPayload} from "@models/types/manage-task-payload";
 import {EditTaskDialogComponent} from "../edit-task-dialog/edit-task-dialog.component";
+import {DragDropModule} from "primeng/dragdrop";
 
 @Component({
   selector: 'it-column',
@@ -44,6 +45,7 @@ import {EditTaskDialogComponent} from "../edit-task-dialog/edit-task-dialog.comp
     Button,
     SkeletonCardComponent,
     EditTaskDialogComponent,
+    DragDropModule,
   ],
   templateUrl: './column.component.html',
   styleUrl: './column.component.scss',
@@ -68,6 +70,9 @@ export class ColumnComponent {
   /* Edit task variables */
   showEditTaskDialog = signal<boolean>(false)
   taskToEdit = signal<Task | null>(null)
+
+  /* Drag Task variables */
+  taskToDrag = this.taskService.taskToDrop
 
   formGroup = signal(this.fb.group({
     search: this.fb.control<string>(''),
@@ -146,5 +151,9 @@ export class ColumnComponent {
 
   deleteTask(task: Task) {
     this.taskService.deleteTask(task.id)
+  }
+
+  dragStart(task: Task) {
+    this.taskToDrag.set({...task})
   }
 }

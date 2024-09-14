@@ -94,3 +94,9 @@ div.tag {
     background: $blue-300
   }
 }
+
+.p-draggable-enter {
+  .p-card {
+    outline: 4px solid $alert;
+  }
+}

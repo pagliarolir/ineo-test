@@ -20,8 +20,11 @@
       <div class="tasks-list">
         @for (task of computedTasks(); track task.id) {
           <it-task
+            pDraggable
             [highlight]="true"
             [task]="task"
+            dragEffect="copy"
+            (onDragStart)="dragStart(task)"
             (onEditTask)="openEditTaskDialog(task)"
             (onDeleteTask)="deleteTask(task)"
           />

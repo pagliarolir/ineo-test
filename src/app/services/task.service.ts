@@ -14,6 +14,7 @@ export class TaskService {
   #tasks = signal<Task[]>([])
   tasks = this.#tasks.asReadonly()
   isLoadingGetAllTasks = signal(true)
+  taskToDrop = signal<Task | null>(null)
 
   getAllTasks() {
     this.http.get<Task[]>(this._url).pipe(
@@ -46,6 +47,15 @@ export class TaskService {
       catchError(() => throwError(() => ({error: 'Errore nella cancellazione del task'}))),
     ).subscribe(() => {
       return this.#tasks.update(items => items.filter(el => el.id !== taskId));
+    })
+  }
+
+  editTaskColumn(task: Task, columnId: number) {
+    this.http.put<Task>(`${this._url}/${task.id}`, {...task, column: columnId}).pipe(
+      catchError(() => throwError(() => ({error: 'Errore nella modifica del task'}))),
+      finalize(() => this.taskToDrop.set(null))
+    ).subscribe(updatedTask => {
+      return this.#tasks.update(items => items.map(el => el.id === task.id ? {...updatedTask} : el));
     })
   }
 }

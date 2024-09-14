@@ -79,4 +79,10 @@ p-card {
       box-shadow: none;
     }
   }
+
+  &.p-draggable-enter {
+    .p-card {
+      outline: 4px solid $alert;
+    }
+  }
 }
