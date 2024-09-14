@@ -33,7 +33,7 @@ import {NgClass, NgOptimizedImage} from "@angular/common";
 export class UsersFormControlComponent implements ControlValueAccessor {
 
   private element = inject(ElementRef)
-  
+
   users = input<User[]>([])
 
   value = signal<User | null>(null)
@@ -78,7 +78,7 @@ export class UsersFormControlComponent implements ControlValueAccessor {
     //Return if no user is selected
     if (!this.value()?.id) return false;
     //Find selected user's ID in the array
-    const index = this.users().indexOf(this.value()!);
+    const index = this.users().indexOf(user);
     return (
       /* Check if it has a previous sibling.
        * index > 0 implies it's not the first element in the array

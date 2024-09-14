@@ -73,8 +73,8 @@
         5,
         2
       ],
-      "label": "Contribute code or a monetary donation to an open-source software project",
-      "column": 3,
+      "label": "Contribute code to an open-source software project",
+      "column": 2,
       "id": 6
     },
     {
@@ -221,7 +221,7 @@
     {
       "id": 21,
       "label": "Create a compost pile",
-      "column": 2,
+      "column": 4,
       "userId": 2,
       "tags": [
         1,
@@ -264,7 +264,7 @@
     {
       "id": 25,
       "label": "Plan a trip to another country",
-      "column": 2,
+      "column": 3,
       "userId": 2,
       "tags": [
         2,
@@ -284,7 +284,7 @@
     {
       "id": 27,
       "label": "Learn Express.js",
-      "column": 2,
+      "column": 4,
       "userId": 3,
       "tags": [
         2,
