@@ -1,28 +1,58 @@
-# IneoTest
+# Ineo Test
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.2.
+## Description
 
-## Development server
+Ineo Test is a take-home project for the company Ineo. The core technology is Angular v18, complemented by other technologies including PrimeNG and a mock JSON server.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- Utilizes Angular 18.2.0
+- Integrated with PrimeNG for UI components
+- Mock JSON server setup with `json-server`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Technologies Used
 
-## Build
+- Angular: ^18.2.0
+- RxJS: ~7.8.0
+- PrimeNG: ^17.18.9
+- PrimeIcons: ^7.0.0
+- json-server: ^1.0.0-beta.2
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation
 
-## Running unit tests
+1. Clone the repository:
+    ```bash
+    git clone <REPOSITORY_URL>
+    ```
+2. Navigate to the project folder:
+    ```bash
+    cd ineo-test
+    ```
+3. Install the dependencies:
+    ```bash
+    npm install
+    ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Usage
 
-## Running end-to-end tests
+1. Start the mock JSON server:
+    ```bash
+    json-server db.json --watch
+    ```
+2. Start the Angular development server:
+    ```bash
+    npm start
+    ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+The application will be available at `http://localhost:4200`.
 
-## Further help
+## Project Structure
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-# ineo-test
+- `src/app/`: Contains the main components, services, and modules.
+- `src/assets/`: Static resources such as images and styles.
+- `src/environments/`: Configuration for development and production environments.
+- `db.json`: Configuration file for `json-server`.
+
+## Authors
+
+- Roberto Pagliaroli - Developer
