@@ -8,7 +8,7 @@
   width: 100%;
   flex: 0;
   display: grid;
-  grid-template-rows: 10% minmax(0, 1fr) 45%;
+  grid-template-rows: 10% minmax(0, 1fr) 40%;
   cursor: pointer;
   @include border-solid($secondary-light);
   gap: 0.5rem;
@@ -54,7 +54,7 @@
     .user-pic-container {
       flex: 1;
       height: 100%;
-      position: relative;
+      display: flex;
 
       .user-pic {
         height: 100%;
@@ -68,13 +68,15 @@
         font-size: $font-size-medium;
         display: flex;
         flex-direction: column;
-        padding-inline: 0.5rem;
+        margin-left: 0.25rem;
 
         &.ng-star-inserted {
           opacity: 1;
-          position: absolute;
-          bottom: -0.25rem;
-          left: 7rem;
+        }
+
+        .user-info-row {
+          display: flex;
+          gap: 0.25rem;
         }
       }
     }

@@ -23,7 +23,6 @@
             pDraggable
             [highlight]="true"
             [task]="task"
-            dragEffect="copy"
             (onDragStart)="dragStart(task)"
             (onEditTask)="openEditTaskDialog(task)"
             (onDeleteTask)="openDeleteTaskDialog(task)"
@@ -52,7 +51,7 @@
         <it-manage-task
           [tags]="Tags"
           [users]="Users"
-          (onCreateTask)="createTask($event); addTaskOp.toggle(true)"
+          (onCreateTask)="createTask($event); addTaskOp.hide()"
         />
       </p-overlayPanel>
     }

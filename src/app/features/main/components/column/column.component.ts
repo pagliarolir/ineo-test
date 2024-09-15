@@ -147,7 +147,7 @@ export class ColumnComponent {
       column: this.column().id,
       id: this.taskToEdit()?.id!
     }
-    this.taskService.editTask(body)
+    this.taskService.editTask({...this.taskToEdit(), ...body})
     this.closeEditTaskDialog()
   }
 

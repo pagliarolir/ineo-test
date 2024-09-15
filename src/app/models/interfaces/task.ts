@@ -3,5 +3,6 @@ export interface Task {
   label: string,
   column: number,
   userId: number,
-  tags: number[]
+  tags: number[],
+  scheduledTime?: number
 }

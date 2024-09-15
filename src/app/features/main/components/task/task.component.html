@@ -15,6 +15,23 @@
       <div @fadeInOut class="user-info">
         <span class="primary bold uppercase">{{ getUserLabel() }}</span>
         <span class="primary bold uppercase small">{{ getUser()?.role }}</span>
+        <div style="display: flex; flex-direction: column; margin-top: auto">
+          <div class="user-info-row">
+            <i [class]="Icons.CALENDAR" class="bold primary"></i>
+            <span class="primary bold small">Data aggiunta: </span>
+            <span class="primary bold small">{{ randomDate() | date:'dd/MM/yy' }}</span>
+          </div>
+          <div class="user-info-row">
+            <i [class]="Icons.CLOCK" class="bold primary"></i>
+            <span class="primary bold small">Tempo stimato: </span>
+            <span class="primary bold small">{{
+                task().scheduledTime! / (1000 * 60 * 60) | i18nPlural: {
+                  '=1': '1 ora',
+                  'other': '# ore'
+                }
+              }}</span>
+          </div>
+        </div>
       </div>
     }
   </div>

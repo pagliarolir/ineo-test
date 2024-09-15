@@ -18,6 +18,10 @@ i {
       color: $primary-dark;
     }
 
+    &.primary {
+      color: $primary;
+    }
+
     &.bold {
       font-weight: $font-weight-bold;
     }

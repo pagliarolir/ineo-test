@@ -19,6 +19,7 @@ import {ManageTaskComponent} from "../manage-task/manage-task.component";
 import {OverlayPanelModule} from "primeng/overlaypanel";
 import {ConfirmDeleteDialogComponent} from "../confirm-delete-dialog/confirm-delete-dialog.component";
 import {EditTaskDialogComponent} from "../edit-task-dialog/edit-task-dialog.component";
+import {DatePipe, I18nPluralPipe} from "@angular/common";
 
 const transitionValue = '400ms cubic-bezier(0.86, 0, 0.07, 1)'
 
@@ -32,6 +33,8 @@ const transitionValue = '400ms cubic-bezier(0.86, 0, 0.07, 1)'
     OverlayPanelModule,
     ConfirmDeleteDialogComponent,
     EditTaskDialogComponent,
+    I18nPluralPipe,
+    DatePipe,
   ],
   animations: [
     trigger('fadeInOut', [
@@ -58,6 +61,7 @@ export class TaskComponent {
 
   @Output() onEditTask = new EventEmitter<void>()
   @Output() onDeleteTask = new EventEmitter<void>()
+  @Output() showDetailedView = new EventEmitter<void>()
 
   toggleExpand() {
     this.isExpanded.update(expanded => !expanded)
@@ -68,5 +72,19 @@ export class TaskComponent {
   @HostBinding('style') get getExpandedStyle() {
     const vh = this.isExpanded() ? '25vh' : '15vh';
     return ({minHeight: vh})
+  }
+
+  /* Just a random date in 2024 to be bound into the template */
+  randomDate = signal(this.getRandomDateIn2024())
+
+  getRandomDateIn2024() {
+    const year = 2024;
+    const startDate = new Date(year, 0, 1); /*1 Jan 2024 */
+    const endDate = new Date(year + 1, 0, 1); /*1 Jan 2025 */
+
+    /* Get a random ms number between previous dates */
+    const randomTime = startDate.getTime() + Math.random() * (endDate.getTime() - startDate.getTime());
+
+    return new Date(randomTime);
   }
 }
