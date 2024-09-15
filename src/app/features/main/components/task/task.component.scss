@@ -74,6 +74,10 @@
           opacity: 1;
         }
 
+        .user-name {
+          line-height: $line-height-medium;
+        }
+
         .user-info-row {
           display: flex;
           gap: 0.25rem;

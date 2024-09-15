@@ -13,8 +13,8 @@
     <img alt="" class="user-pic" [src]="getUser()?.picture">
     @if (isExpanded()) {
       <div @fadeInOut class="user-info">
-        <span class="primary bold uppercase">{{ getUserLabel() }}</span>
-        <span class="primary bold uppercase small">{{ getUser()?.role }}</span>
+        <span class="primary bold uppercase bigger user-name">{{ getUserLabel() }}</span>
+        <span class="primary bold uppercase small user-role">{{ getUser()?.role }}</span>
         <div style="display: flex; flex-direction: column; margin-top: auto">
           <div class="user-info-row">
             <i [class]="Icons.CALENDAR" class="bold primary"></i>
