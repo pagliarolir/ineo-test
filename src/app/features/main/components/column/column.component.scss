@@ -1,8 +1,8 @@
 @import "variables";
+@import "colors";
 @import "mixins/flex-container";
 
 :host {
-  flex: 0 1 25%;
 
   .tasks-list {
     @include flex-container(flex-start, flex-start, column);

@@ -56,6 +56,7 @@ p-card {
       padding: 0;
 
       .p-card-content {
+        background: $background;
         height: calc(100% - $card-footer-height);
         padding: 0;
         flex: 1;

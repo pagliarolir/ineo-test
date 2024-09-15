@@ -12,6 +12,7 @@
   cursor: pointer;
   @include border-solid($secondary-light);
   gap: 0.5rem;
+  background: $white;
   border-radius: $border-radius-default;
   box-shadow: $block-box-shadow;
   transition: min-height $cubic-bezier-transition;

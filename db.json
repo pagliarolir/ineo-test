@@ -210,7 +210,7 @@
     {
       "id": 20,
       "label": "Bake a pie with some friends",
-      "column": 4,
+      "column": 2,
       "userId": 2,
       "tags": [
         1,
@@ -219,13 +219,15 @@
       ]
     },
     {
-      "userId": 3,
+      "userId": 4,
       "tags": [
         1,
-        2
+        2,
+        4,
+        5
       ],
       "label": "Create a compost pile",
-      "column": 2,
+      "column": 3,
       "id": 21
     },
     {
@@ -271,11 +273,11 @@
       ]
     },
     {
-      "userId": 3,
+      "userId": 2,
       "tags": [
-        3,
         1,
-        4
+        4,
+        2
       ],
       "label": "Improve touch typing",
       "column": 2,
