@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, effect, ElementRef, inject, input, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, effect, ElementRef, inject, input, signal} from '@angular/core';
 import {User} from "@models/interfaces/user";
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 import {NgClass, NgOptimizedImage} from "@angular/common";
@@ -16,7 +16,7 @@ import {NgClass, NgOptimizedImage} from "@angular/common";
         <img class="avatar"
              alt=""
              [src]="user.picture"
-             [ngClass]="{'selected': $index === selectedUserIndex()}"
+             [ngClass]="{'selected': selectedUserIndex() === $index}"
              [style.z-index]="getZIndex($index)"
              (click)="setValue(user, $index)"
         />
@@ -69,8 +69,6 @@ export class UsersFormControlComponent implements ControlValueAccessor {
     this.value.set(user)
     if (this.value()) {
       this.onChange(this.value()!)
-      // This
-      this.selectedUserIndex.set(index);
     }
     this.onTouched()
   }
@@ -79,7 +77,7 @@ export class UsersFormControlComponent implements ControlValueAccessor {
   /* Calc. users length and set correspondent css variable. This is for styling purpose */
   usersNumber = effect(() => this.element.nativeElement.style.setProperty('--users-no', this.users().length))
 
-  selectedUserIndex = signal<number | null>(null)
+  selectedUserIndex = computed(() => this.users().findIndex(el => el.id === this.value()?.id))
 
   /* Calc z-index to be assigned to users based on users number.
    * This method is only for styling purpose
@@ -87,8 +85,8 @@ export class UsersFormControlComponent implements ControlValueAccessor {
   getZIndex(index: number): number {
     const maxZIndex = this.users().length;
 
-    if (this.selectedUserIndex() === null) {
-      return maxZIndex - index; // Z-index decreases according to position
+    if (this.selectedUserIndex() === -1) { /*If no user's been selected yet*/
+      return maxZIndex - index;
     }
 
     const distanceFromSelected = Math.abs(index - this.selectedUserIndex()!);
