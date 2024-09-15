@@ -4,5 +4,5 @@ export interface Task {
   column: number,
   userId: number,
   tags: number[],
-  scheduledTime?: number
+  scheduledTime: number
 }

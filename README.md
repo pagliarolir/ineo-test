@@ -16,7 +16,7 @@ Ineo Test is a take-home project for the company Ineo. The core technology is An
 - RxJS: ~7.8.0
 - PrimeNG: ^17.18.9
 - PrimeIcons: ^7.0.0
-- json-server: ^1.0.0-beta.2
+- json-server: 0.17.4
 
 ## Installation
 

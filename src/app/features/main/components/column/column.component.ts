@@ -129,7 +129,8 @@ export class ColumnComponent {
       userId: event.user?.id!,
       column: this.column().id,
       tags: event.tags,
-      label: event.label
+      label: event.label,
+      scheduledTime: 3600000
     }
     this.taskService.addTask(body)
   }
@@ -145,9 +146,10 @@ export class ColumnComponent {
       tags: event.tags,
       label: event.label,
       column: this.column().id,
-      id: this.taskToEdit()?.id!
+      id: this.taskToEdit()?.id!,
+      scheduledTime: 7200000
     }
-    this.taskService.editTask({...this.taskToEdit(), ...body})
+    this.taskService.editTask({...body})
     this.closeEditTaskDialog()
   }
 
